@@ -1,0 +1,336 @@
+[gd_scene format=3 uid="uid://ybbujwmkjuc"]
+
+[ext_resource type="Texture2D" uid="uid://br74g171yxhvx" path="res://White Checkered Texture flat.png" id="1_eox04"]
+[ext_resource type="PackedScene" uid="uid://by287x1xhkp1o" path="res://Assets/TempAssets/KenneyAssets/kenney_castle-kit/Models/GLB format/bridge-draw.glb" id="2_ojoh2"]
+[ext_resource type="PackedScene" uid="uid://oj0kutunptuu" path="res://Assets/TempAssets/KenneyAssets/kenney_castle-kit/Models/GLB format/wall-pillar.glb" id="3_ht060"]
+[ext_resource type="PackedScene" uid="uid://bjliegk7f0bwa" path="res://Assets/TempAssets/KenneyAssets/kenney_castle-kit/Models/GLB format/wall.glb" id="4_6tcqh"]
+[ext_resource type="PackedScene" uid="uid://dw7cj1mi8lco5" path="res://Assets/TempAssets/KenneyAssets/kenney_castle-kit/Models/GLB format/wall-corner-half-tower.glb" id="5_w1js5"]
+[ext_resource type="PackedScene" uid="uid://dvgww7y1m54vi" path="res://Assets/TempAssets/KenneyAssets/kenney_castle-kit/Models/GLB format/wall-narrow-gate.glb" id="6_v2bur"]
+[ext_resource type="PackedScene" uid="uid://bxj48xk16ai4g" path="res://Assets/TempAssets/KenneyAssets/kenney_castle-kit/Models/GLB format/metal-gate.glb" id="7_lshgn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvj1l"]
+albedo_color = Color(0, 0.50383776, 6.738305e-07, 1)
+albedo_texture = ExtResource("1_eox04")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_qvrrf"]
+material = SubResource("StandardMaterial3D_tvj1l")
+size = Vector3(60, 1, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qvrrf"]
+size = Vector3(60, 1, 60)
+
+[node name="Main Town" type="Node3D" unique_id=1475342060]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1543819873]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=453920534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27816772, 0, 0.23605347)
+mesh = SubResource("BoxMesh_qvrrf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1538274674]
+shape = SubResource("BoxShape3D_qvrrf")
+
+[node name="MainCamera" type="Camera3D" parent="." unique_id=441146192]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0.8764572, 10.819774, 16.554533)
+fov = 40.0
+size = 12.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1716534552]
+transform = Transform3D(0.8704564, -0.43961158, 0.22146623, 0.18340065, 0.7071533, 0.6828605, -0.45680395, -0.55378324, 0.69617116, 8.368971, 7.2231293, 0.15054893)
+
+[node name="Walls" type="Node3D" parent="." unique_id=1630987231]
+
+[node name="bridge-draw2" parent="Walls" unique_id=1915244931 instance=ExtResource("2_ojoh2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8691902, 0, 0)
+metadata/asset_placer_res_id = "uid://by287x1xhkp1o"
+
+[node name="wall-pillar2" parent="Walls" unique_id=2028446342 instance=ExtResource("3_ht060")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.5000005, -2)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall-pillar2 (1)" parent="Walls" unique_id=105382056 instance=ExtResource("3_ht060")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.5, -1)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall-pillar2 (2)" parent="Walls" unique_id=576668523 instance=ExtResource("3_ht060")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.5000005, 0)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall-pillar2 (3)" parent="Walls" unique_id=1153918196 instance=ExtResource("3_ht060")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.5, 1)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall-pillar2 (4)" parent="Walls" unique_id=914212692 instance=ExtResource("3_ht060")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.49999952, 2)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall-pillar2 (5)" parent="Walls" unique_id=924430423 instance=ExtResource("3_ht060")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.5, 3)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall-pillar2 (6)" parent="Walls" unique_id=7246067 instance=ExtResource("3_ht060")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.5000005, 4)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall-pillar2 (7)" parent="Walls" unique_id=1242403574 instance=ExtResource("3_ht060")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.5000005, 4)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall-pillar2 (8)" parent="Walls" unique_id=910922417 instance=ExtResource("3_ht060")]
+transform = Transform3D(1.0430813e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.0430813e-07, 7.86919, 0.5, -3)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall-pillar2 (10)" parent="Walls" unique_id=407218157 instance=ExtResource("3_ht060")]
+transform = Transform3D(1.0430813e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.0430813e-07, 5.86919, 0.5, -3)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall-pillar2 (21)" parent="Walls" unique_id=1566522329 instance=ExtResource("3_ht060")]
+transform = Transform3D(1.0430813e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.0430813e-07, -5.13081, 0.5, -3)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall-pillar2 (22)" parent="Walls" unique_id=1973732885 instance=ExtResource("3_ht060")]
+transform = Transform3D(1.0430813e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.0430813e-07, -6.13081, 0.49999952, -3)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall-pillar2 (23)" parent="Walls" unique_id=76296317 instance=ExtResource("3_ht060")]
+transform = Transform3D(1.0430813e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.0430813e-07, -7.13081, 0.5, -3)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall-pillar2 (24)" parent="Walls" unique_id=1376175615 instance=ExtResource("3_ht060")]
+transform = Transform3D(1.0430813e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.0430813e-07, -8.13081, 0.5, -3)
+metadata/asset_placer_res_id = "uid://oj0kutunptuu"
+
+[node name="wall2" parent="Walls" unique_id=1242478773 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 4.86919, 0.5000005, -3)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (1)" parent="Walls" unique_id=1031193256 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 3.8691902, 0.5, -3)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (2)" parent="Walls" unique_id=1175983401 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 2.8691902, 0.5, -3)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (3)" parent="Walls" unique_id=2041720373 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 1.8691902, 0.5, -3)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (4)" parent="Walls" unique_id=551361282 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 0.8691902, 0.5, -3)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (5)" parent="Walls" unique_id=1842839073 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 0.8691902, 0.5, -3)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (6)" parent="Walls" unique_id=1230242323 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -0.13080978, 0.5, -3)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (7)" parent="Walls" unique_id=325854339 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -1.1308098, 0.5, -3)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (8)" parent="Walls" unique_id=1123200016 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -2.1308098, 0.5, -3)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (9)" parent="Walls" unique_id=390354025 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 6.86919, 0.49999952, -3)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (10)" parent="Walls" unique_id=265492192 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -4.13081, 0.5000005, -3)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (11)" parent="Walls" unique_id=1632721124 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -3.1308098, 0.49999952, -3)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (13)" parent="Walls" unique_id=1951335372 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(-1.0000012, 0, -2.6077032e-07, 0, 1, 0, 2.6077032e-07, 0, -1.0000012, -9.13081, 0.5, -2)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (14)" parent="Walls" unique_id=359434204 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(-1.0000012, 0, -2.6077032e-07, 0, 1, 0, 2.6077032e-07, 0, -1.0000012, -9.13081, 0.5, -1)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (15)" parent="Walls" unique_id=1991739361 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(-1.0000012, 0, -2.6077032e-07, 0, 1, 0, 2.6077032e-07, 0, -1.0000012, -9.13081, 0.5, 0)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (16)" parent="Walls" unique_id=1354434753 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13081, 0.5, 1)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (17)" parent="Walls" unique_id=1842928056 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13081, 0.50000095, 2)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (18)" parent="Walls" unique_id=1260504105 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13081, 0.5, 4)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (19)" parent="Walls" unique_id=1170216118 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13081, 0.5, 3)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (20)" parent="Walls" unique_id=731823220 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13081, 0.5, 5)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (21)" parent="Walls" unique_id=291231271 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13081, 0.5, 6)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (22)" parent="Walls" unique_id=225567280 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13081, 0.49999905, 7)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (23)" parent="Walls" unique_id=1190757110 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.4999981, 5)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (24)" parent="Walls" unique_id=1845338932 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.5, 6)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (25)" parent="Walls" unique_id=2001005281 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.4999981, 7)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (26)" parent="Walls" unique_id=1319808796 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.5, 8)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (27)" parent="Walls" unique_id=1293431951 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.5, 10)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (28)" parent="Walls" unique_id=185808329 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.5, 9)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (29)" parent="Walls" unique_id=731682559 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13081, 0.5000019, 8)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (30)" parent="Walls" unique_id=933845652 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13081, 0.5, 9)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (31)" parent="Walls" unique_id=1098621676 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13081, 0.5, 10)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall-corner-half-tower2" parent="Walls" unique_id=976741689 instance=ExtResource("5_w1js5")]
+transform = Transform3D(-1.0000007, 0, -3.9488077e-07, 0, 1, 0, 3.9488077e-07, 0, -1.0000007, -9.13081, 0.5, -3)
+metadata/asset_placer_res_id = "uid://dw7cj1mi8lco5"
+
+[node name="wall-corner-half-tower2 (1)" parent="Walls" unique_id=657833204 instance=ExtResource("5_w1js5")]
+transform = Transform3D(1.0430813e-07, 0, 1.0000006, 0, 1, 0, -1.0000006, 0, 1.0430813e-07, 8.86919, 0.5, -3)
+metadata/asset_placer_res_id = "uid://dw7cj1mi8lco5"
+
+[node name="wall-corner-half-tower2 (2)" parent="Walls" unique_id=1224297722 instance=ExtResource("5_w1js5")]
+transform = Transform3D(2.1606684e-07, 0, -1.0000005, 0, 1, 0, 1.0000005, 0, 2.1606684e-07, -9.13081, 0.5, 11)
+metadata/asset_placer_res_id = "uid://dw7cj1mi8lco5"
+
+[node name="wall-corner-half-tower2 (3)" parent="Walls" unique_id=1034484313 instance=ExtResource("5_w1js5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86919, 0.5000005, 11)
+metadata/asset_placer_res_id = "uid://dw7cj1mi8lco5"
+
+[node name="wall2 (31)2" parent="Walls" unique_id=701714951 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -8.13081, 0.5, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (32)" parent="Walls" unique_id=1550527369 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -7.13081, 0.5000005, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (33)" parent="Walls" unique_id=1898839400 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -6.13081, 0.5, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (34)" parent="Walls" unique_id=1014693641 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -5.13081, 0.49999952, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (35)" parent="Walls" unique_id=1969820266 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -4.13081, 0.5, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (36)" parent="Walls" unique_id=1717857778 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -4.13081, 0.5, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (37)" parent="Walls" unique_id=339843150 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -3.1308098, 0.5, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (39)" parent="Walls" unique_id=828779941 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -2.1308098, 0.5, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (40)" parent="Walls" unique_id=807734268 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -1.1308098, 0.5, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (41)" parent="Walls" unique_id=1903186911 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -0.13080978, 0.5000005, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (43)" parent="Walls" unique_id=797332706 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 1.8691902, 0.5, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (44)" parent="Walls" unique_id=302625934 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 2.8691902, 0.5, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (45)" parent="Walls" unique_id=62905787 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 3.8691902, 0.5, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (46)" parent="Walls" unique_id=668193287 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 4.86919, 0.49999952, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (47)" parent="Walls" unique_id=682829283 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 4.86919, 0.5, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (48)" parent="Walls" unique_id=950869087 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 5.86919, 0.5000005, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (49)" parent="Walls" unique_id=220915892 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 6.86919, 0.49999952, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (50)" parent="Walls" unique_id=11843763 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 7.86919, 0.5, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall2 (51)" parent="Walls" unique_id=784821019 instance=ExtResource("4_6tcqh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, -3.1308098, 0.5000005, 11)
+metadata/asset_placer_res_id = "uid://bjliegk7f0bwa"
+
+[node name="wall-narrow-gate2" parent="Walls" unique_id=926455814 instance=ExtResource("6_v2bur")]
+transform = Transform3D(2.2351742e-07, 0, -1.0000006, 0, 1, 0, 1.0000006, 0, 2.2351742e-07, 0.8691902, 0.5, 11)
+metadata/asset_placer_res_id = "uid://dvgww7y1m54vi"
+
+[node name="wall-narrow-gate2 (1)" parent="Walls" unique_id=1510179174 instance=ExtResource("6_v2bur")]
+transform = Transform3D(-7.450581e-09, 0, 1.0000017, 0, 1, 0, -1.0000017, 0, -7.450581e-09, 0.8691902, 0.49999905, 11)
+metadata/asset_placer_res_id = "uid://dvgww7y1m54vi"
+
+[node name="metal-gate2" parent="Walls" unique_id=231336563 instance=ExtResource("7_lshgn")]
+transform = Transform3D(3.0574586e-07, 0, -1.5702854, 0, 1.5702848, 0, 1.5702854, 0, 3.0574586e-07, 0.8125484, 0.5, 11.400654)
+metadata/asset_placer_res_id = "uid://bxj48xk16ai4g"
+
+[node name="metal-gate2 (1)" parent="Walls" unique_id=381174947 instance=ExtResource("7_lshgn")]
+transform = Transform3D(3.0574586e-07, 0, -1.5702854, 0, 1.5702848, 0, 1.5702854, 0, 3.0574586e-07, 0.8775035, 0.49999988, 10.681251)
+metadata/asset_placer_res_id = "uid://bxj48xk16ai4g"

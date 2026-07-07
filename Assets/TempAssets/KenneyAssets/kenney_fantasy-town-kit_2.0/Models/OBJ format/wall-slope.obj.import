@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0dgasee6xxgc"
+path="res://.godot/imported/wall-slope.obj-e98afb4a1d3f7cdf0026755fbb4fbcfc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-slope.obj-e98afb4a1d3f7cdf0026755fbb4fbcfc.mesh"]
+
+source_file="res://Assets/TempAssets/KenneyAssets/kenney_fantasy-town-kit_2.0/Models/OBJ format/wall-slope.obj"
+dest_files=["res://.godot/imported/wall-slope.obj-e98afb4a1d3f7cdf0026755fbb4fbcfc.mesh", "res://.godot/imported/wall-slope.obj-e98afb4a1d3f7cdf0026755fbb4fbcfc.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

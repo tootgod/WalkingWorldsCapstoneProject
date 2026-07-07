@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dddc1epk4g5hy"
+path="res://.godot/imported/crate-color.obj-31c505fa77e321beeb20a5b8d3904433.mesh"
+
+[deps]
+
+files=["res://.godot/imported/crate-color.obj-31c505fa77e321beeb20a5b8d3904433.mesh"]
+
+source_file="res://Assets/TempAssets/KenneyAssets/kenney_prototype-kit/Models/OBJ format/crate-color.obj"
+dest_files=["res://.godot/imported/crate-color.obj-31c505fa77e321beeb20a5b8d3904433.mesh", "res://.godot/imported/crate-color.obj-31c505fa77e321beeb20a5b8d3904433.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
