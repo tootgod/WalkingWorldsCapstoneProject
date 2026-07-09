@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dx1j27frt1jwq"]
+
+[ext_resource type="PackedScene" uid="uid://bdkalaunec0ps" path="res://Assets/TempAssets/KenneyAssets/kenney_fantasy-town-kit_2.0/Models/FBX format/wall-corner.fbx" id="1_cftb0"]
+[ext_resource type="PackedScene" uid="uid://c4ntlohiwve5r" path="res://Assets/TempAssets/KenneyAssets/kenney_fantasy-town-kit_2.0/Models/FBX format/wall-corner-edge.fbx" id="2_4xeof"]
+[ext_resource type="PackedScene" uid="uid://dpdi2x8gbnwjw" path="res://Assets/TempAssets/KenneyAssets/kenney_fantasy-town-kit_2.0/Models/FBX format/wall-door.fbx" id="3_flt0g"]
+[ext_resource type="PackedScene" uid="uid://ganpw6amkf5o" path="res://Assets/TempAssets/KenneyAssets/kenney_fantasy-town-kit_2.0/Models/FBX format/wall-block.fbx" id="4_av7a4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8qf6b"]
+size = Vector3(5, 0.3, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tuds7"]
+size = Vector3(5, 0.3, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_44ght"]
+size = Vector3(2.0381317, 1.0010681, 2.989746)
+
+[node name="Town Hall" type="Node3D" unique_id=1128652608]
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=890399734]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1340285125]
+mesh = SubResource("BoxMesh_8qf6b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=990760012]
+shape = SubResource("BoxShape3D_tuds7")
+
+[node name="Model" type="Node3D" parent="." unique_id=2001522851]
+
+[node name="wall-corner (2)" type="Node3D" parent="Model" unique_id=1363703993 instance=ExtResource("1_cftb0")]
+transform = Transform3D(8.419156e-07, 0, -1.0000024, 0, 1, 0, 1.0000024, 0, 8.419156e-07, -1, 0.1500001, 1)
+metadata/asset_placer_res_id = "uid://bdkalaunec0ps"
+
+[node name="wall-corner (3)" type="Node3D" parent="Model" unique_id=665258255 instance=ExtResource("1_cftb0")]
+transform = Transform3D(-1.0000029, 0, -9.685755e-07, 0, 1, 0, 9.685755e-07, 0, -1.0000029, -1, 0.1500001, -1)
+metadata/asset_placer_res_id = "uid://bdkalaunec0ps"
+
+[node name="wall-corner-edge" type="Node3D" parent="Model" unique_id=1376026301 instance=ExtResource("2_4xeof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1500001, 1)
+metadata/asset_placer_res_id = "uid://c4ntlohiwve5r"
+
+[node name="wall-corner-edge (1)" type="Node3D" parent="Model" unique_id=597340967 instance=ExtResource("2_4xeof")]
+transform = Transform3D(-5.662441e-07, 0, 1.0000013, 0, 1, 0, -1.0000013, 0, -5.662441e-07, 0, 0.1500001, -1)
+metadata/asset_placer_res_id = "uid://c4ntlohiwve5r"
+
+[node name="wall-door" type="Node3D" parent="Model" unique_id=596850819 instance=ExtResource("3_flt0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14999998, 0)
+metadata/asset_placer_res_id = "uid://dpdi2x8gbnwjw"
+
+[node name="wall-block" type="Node3D" parent="Model" unique_id=2080619998 instance=ExtResource("4_av7a4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.1500001, 0)
+metadata/asset_placer_res_id = "uid://ganpw6amkf5o"
+
+[node name="wall-block (1)" type="Node3D" parent="Model" unique_id=643033774 instance=ExtResource("4_av7a4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.1500001, 1)
+metadata/asset_placer_res_id = "uid://ganpw6amkf5o"
+
+[node name="wall-block (2)" type="Node3D" parent="Model" unique_id=2049892389 instance=ExtResource("4_av7a4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.14999986, -1)
+metadata/asset_placer_res_id = "uid://ganpw6amkf5o"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Model" unique_id=365745756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49056244, 0.65053403, -0.0026855469)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/StaticBody3D" unique_id=1426536923]
+shape = SubResource("BoxShape3D_44ght")

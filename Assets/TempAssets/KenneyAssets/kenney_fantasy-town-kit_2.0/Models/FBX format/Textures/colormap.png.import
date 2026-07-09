@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://j4whjj5dyqf0"
 path.s3tc="res://.godot/imported/colormap.png-c2d73762110f5c3b08ee15a2b3336be3.s3tc.ctex"
+path.etc2="res://.godot/imported/colormap.png-c2d73762110f5c3b08ee15a2b3336be3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/TempAssets/KenneyAssets/kenney_fantasy-town-kit_2.0/Models/FBX format/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-c2d73762110f5c3b08ee15a2b3336be3.s3tc.ctex"]
+dest_files=["res://.godot/imported/colormap.png-c2d73762110f5c3b08ee15a2b3336be3.s3tc.ctex", "res://.godot/imported/colormap.png-c2d73762110f5c3b08ee15a2b3336be3.etc2.ctex"]
 
 [params]
 

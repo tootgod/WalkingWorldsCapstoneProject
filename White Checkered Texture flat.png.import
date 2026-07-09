@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://br74g171yxhvx"
 path.s3tc="res://.godot/imported/White Checkered Texture flat.png-e2e8a0900157f9980c858d1949b6513b.s3tc.ctex"
+path.etc2="res://.godot/imported/White Checkered Texture flat.png-e2e8a0900157f9980c858d1949b6513b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://White Checkered Texture flat.png"
-dest_files=["res://.godot/imported/White Checkered Texture flat.png-e2e8a0900157f9980c858d1949b6513b.s3tc.ctex"]
+dest_files=["res://.godot/imported/White Checkered Texture flat.png-e2e8a0900157f9980c858d1949b6513b.s3tc.ctex", "res://.godot/imported/White Checkered Texture flat.png-e2e8a0900157f9980c858d1949b6513b.etc2.ctex"]
 
 [params]
 
