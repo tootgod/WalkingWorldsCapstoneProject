@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cehovxx1jufns"]
+
+[ext_resource type="Script" uid="uid://bvhcfpcqjbq4r" path="res://detection_raycast.gd" id="1_ohexl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qvrrf"]
+size = Vector3(0.1, 1000, 0.1)
+
+[node name="DetectionRaycast" type="RayCast3D" unique_id=1931851363]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+target_position = Vector3(0, -1000, 0)
+collide_with_areas = true
+script = ExtResource("1_ohexl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1503285512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -500, 0)
+mesh = SubResource("BoxMesh_qvrrf")

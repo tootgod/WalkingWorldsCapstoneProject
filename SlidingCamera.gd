@@ -2,6 +2,7 @@ class_name TownCamera
 extends Camera3D
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	position.x = 0.876
@@ -18,3 +19,4 @@ func _input(event: InputEvent) -> void:
 		
 		rotate_x(-event.screen_velocity.y/700000)
 		rotation_degrees.x = clampf(rotation_degrees.x,-55,-35)
+		

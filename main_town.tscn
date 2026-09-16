@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ybbujwmkjuc"]
 
 [ext_resource type="Texture2D" uid="uid://br74g171yxhvx" path="res://White Checkered Texture flat.png" id="1_eox04"]
+[ext_resource type="Script" uid="uid://c0sq404m2t5kd" path="res://main_town.gd" id="1_v2bur"]
 [ext_resource type="Script" uid="uid://ryj2n5uatcqq" path="res://SlidingCamera.gd" id="2_6tcqh"]
 [ext_resource type="PackedScene" uid="uid://by287x1xhkp1o" path="res://Assets/TempAssets/KenneyAssets/kenney_castle-kit/Models/GLB format/bridge-draw.glb" id="2_ojoh2"]
 [ext_resource type="PackedScene" uid="uid://oj0kutunptuu" path="res://Assets/TempAssets/KenneyAssets/kenney_castle-kit/Models/GLB format/wall-pillar.glb" id="3_ht060"]
@@ -25,6 +26,9 @@ size = Vector3(60, 1, 60)
 size = Vector3(60, 1, 60)
 
 [node name="Main Town" type="Node3D" unique_id=1475342060]
+script = ExtResource("1_v2bur")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=763376634]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1543819873]
 
@@ -339,4 +343,6 @@ transform = Transform3D(3.0574586e-07, 0, -1.5702854, 0, 1.5702848, 0, 1.5702854
 metadata/asset_placer_res_id = "uid://bxj48xk16ai4g"
 
 [node name="Town Hall" parent="Walls" unique_id=1128652608 instance=ExtResource("9_w1js5")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.278284, 0.64999986, 0.51667655)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.278284, 0.64999986, 0.7765579)
+
+[connection signal="town_hall_pressed" from="Walls/Town Hall" to="." method="_on_town_hall_town_hall_pressed"]
