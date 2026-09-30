@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d3x263mywo5ij"]
+
+[ext_resource type="Script" uid="uid://dpfygbxk44edm" path="res://Scripts/town_menu.gd" id="1_0vu06"]
+
+[node name="Town Menu" type="Control" unique_id=105520813]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0vu06")
+
+[node name="Close Button" type="Button" parent="." unique_id=42070387]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 116.0
+offset_right = 249.0
+offset_bottom = 225.0
+text = "Close"
+
+[node name="Label" type="Label" parent="Close Button" unique_id=768436420]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -78.0
+offset_right = 78.0
+offset_bottom = -27.0
+text = "TOWN HALL"
+
+[connection signal="pressed" from="Close Button" to="." method="_on_close_button_pressed"]
