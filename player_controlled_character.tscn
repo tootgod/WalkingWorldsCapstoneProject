@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bgg585od5hdgn"]
+
+[ext_resource type="PackedScene" uid="uid://dw2f4y2gbsl40" path="res://Assets/TempAssets/KenneyAssets/kenney_mini-characters/Models/GLB format/character-female-e.glb" id="1_auiam"]
+[ext_resource type="Script" uid="uid://dxu8myo4bpm8b" path="res://Scripts/MovingCharacter.gd" id="1_jhx5n"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qvrrf"]
+radius = 0.21972656
+height = 0.7196045
+
+[node name="PlayerControlledCharacter" type="CharacterBody3D" unique_id=1030696041]
+script = ExtResource("1_jhx5n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=617803577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32635498, 0)
+shape = SubResource("CapsuleShape3D_qvrrf")
+
+[node name="character-female-e2" parent="." unique_id=645503021 instance=ExtResource("1_auiam")]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=468104034]
+debug_enabled = true
+debug_path_custom_color = Color(0.03137255, 1, 1, 1)
