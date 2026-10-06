@@ -12,7 +12,7 @@ func _ready() -> void:
 		queue_free()
 
 func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	print("hi")
+	
 	if event is InputEventScreenTouch:
 		if !event.pressed:
 			area_touched.emit(event_position)

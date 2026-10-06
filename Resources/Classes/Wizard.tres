@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://2q6ts7clsr5m"]
+
+[ext_resource type="Script" uid="uid://byw70jil3xeno" path="res://Scripts/Resources/CharacterClass.gd" id="1_in1gy"]
+[ext_resource type="Script" uid="uid://6lfp1cabqxpm" path="res://Scripts/Resources/Moves.gd" id="1_krp6f"]
+[ext_resource type="Script" uid="uid://c67hj2d2nr8ip" path="res://Scripts/Resources/PassiveAbility.gd" id="2_ph5ah"]
+[ext_resource type="Resource" uid="uid://dqbiigi0w1xqy" path="res://Resources/Moves/Fireball.tres" id="2_ul22t"]
+[ext_resource type="Resource" uid="uid://yjgb8og246bq" path="res://Resources/Passives/MagicMaster.tres" id="4_aie12"]
+
+[resource]
+script = ExtResource("1_in1gy")
+movesPerLevelDict = Dictionary[int, ExtResource("1_krp6f")]({
+1: ExtResource("2_ul22t")
+})
+potentialPassives = Array[ExtResource("2_ph5ah")]([ExtResource("4_aie12")])
+metadata/_custom_type_script = "uid://byw70jil3xeno"
