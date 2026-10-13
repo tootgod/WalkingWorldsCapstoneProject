@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b43ku0pjt5rqb"]
+
+[ext_resource type="PackedScene" uid="uid://mytuuojix633" path="res://Scenes/placeholder_battle_character.tscn" id="1_a8saj"]
+[ext_resource type="Script" uid="uid://d1iee0csk0vwg" path="res://Scenes/enemy_battle_character.gd" id="2_gy4ma"]
+[ext_resource type="PackedScene" uid="uid://me84xwa0nteb" path="res://Assets/TempAssets/KenneyAssets/kenney_graveyard-kit_5.0/Models/GLB format/character-skeleton.glb" id="2_wagbc"]
+[ext_resource type="Script" uid="uid://6lfp1cabqxpm" path="res://Scripts/Resources/Moves.gd" id="3_dbukt"]
+[ext_resource type="Resource" uid="uid://dm5042is4j3r6" path="res://Resources/Moves/BasicAttack.tres" id="4_voafi"]
+
+[node name="Enemy_battle_character" unique_id=630908164 instance=ExtResource("1_a8saj")]
+script = ExtResource("2_gy4ma")
+moveList = Array[ExtResource("3_dbukt")]([ExtResource("4_voafi")])
+
+[node name="AttackTimer" parent="." index="0" unique_id=1356850993]
+wait_time = 5.0
+
+[node name="AttackDelay" type="Timer" parent="." index="3" unique_id=339694015]
+one_shot = true
+
+[node name="character-skeleton2" parent="ModelPivot" parent_id_path=PackedInt32Array(1380368883) index="0" unique_id=452661447 instance=ExtResource("2_wagbc")]
+
+[node name="arm-right" parent="ModelPivot/character-skeleton2/character-skeleton/root/torso" parent_id_path=PackedInt32Array(452661447, 1551517715) index="1" unique_id=526871995]
+transform = Transform3D(0.70710665, -0.70710677, 0, 0.70710677, 0.70710665, 0, 0, 0, 1, -0.125, 0.17, 0.0024999976)
+
+[node name="arm-left" parent="ModelPivot/character-skeleton2/character-skeleton/root/torso" parent_id_path=PackedInt32Array(452661447, 1551517715) index="2" unique_id=1017420686]
+transform = Transform3D(0.70710665, 0.70710677, 0, -0.70710677, 0.70710665, 0, 0, 0, 1, 0.125, 0.17, 0.0024999976)
+
+[node name="AnimationPlayer" parent="ModelPivot/character-skeleton2" index="1" unique_id=1243660389]
+autoplay = &"idle"
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout_enemy"]
+[connection signal="timeout" from="AttackDelay" to="." method="_on_attack_delay_timeout"]
+
+[editable path="ModelPivot/character-skeleton2"]

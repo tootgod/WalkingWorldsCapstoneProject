@@ -22,7 +22,8 @@ func _on_touch_detector_component_area_touched(event_position: Vector3) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == $PlayerControlledCharacter:
-		get_tree().change_scene_to_file("res://BattleScene.tscn")
+		
+		get_tree().change_scene_to_file.call_deferred("res://Scenes/BattleScene.tscn")
 
 
 func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
