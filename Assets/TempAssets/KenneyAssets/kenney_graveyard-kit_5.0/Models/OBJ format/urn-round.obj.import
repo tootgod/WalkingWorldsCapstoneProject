@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cd0m8yacp56me"
+path="res://.godot/imported/urn-round.obj-92df96b4f1ca6405fc109c1f3b930f96.mesh"
+
+[deps]
+
+files=["res://.godot/imported/urn-round.obj-92df96b4f1ca6405fc109c1f3b930f96.mesh"]
+
+source_file="res://Assets/TempAssets/KenneyAssets/kenney_graveyard-kit_5.0/Models/OBJ format/urn-round.obj"
+dest_files=["res://.godot/imported/urn-round.obj-92df96b4f1ca6405fc109c1f3b930f96.mesh", "res://.godot/imported/urn-round.obj-92df96b4f1ca6405fc109c1f3b930f96.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bpaixwb52t8da"]
+
+[ext_resource type="Script" uid="uid://ck5ru4w340y1g" path="res://Scripts/Resources/BattleSystemManager.gd" id="1_b2eky"]
+[ext_resource type="Texture2D" uid="uid://br74g171yxhvx" path="res://White Checkered Texture flat.png" id="2_ahap6"]
+[ext_resource type="PackedScene" uid="uid://b43ku0pjt5rqb" path="res://Scenes/enemy_battle_character.tscn" id="3_b2eky"]
+[ext_resource type="PackedScene" uid="uid://dqdc3os15lb8g" path="res://Scenes/player_battle_character.tscn" id="4_ahap6"]
+[ext_resource type="PackedScene" uid="uid://bixgg0vhe11n7" path="res://move_selection.tscn" id="5_hb1yk"]
+[ext_resource type="PackedScene" uid="uid://bg0xtj7l5m6yp" path="res://Scenes/attack_number.tscn" id="6_u810s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvj1l"]
+albedo_color = Color(0, 0.50383776, 6.738305e-07, 1)
+albedo_texture = ExtResource("2_ahap6")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_7pwqm"]
+material = SubResource("StandardMaterial3D_tvj1l")
+size = Vector3(60, 1, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bqhns"]
+size = Vector3(60, 1, 60)
+
+[node name="BattleScene" type="Node3D" unique_id=530234072]
+script = ExtResource("1_b2eky")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=322734291]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1924919779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27816772, 0, 0.23605347)
+mesh = SubResource("BoxMesh_7pwqm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1497069579]
+shape = SubResource("BoxShape3D_bqhns")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2112842607]
+transform = Transform3D(1, 0, 0, 0, 0.71194804, 0.7022322, 0, -0.7022322, 0.71194804, 0.014164686, 3.020347, 4.092032)
+projection = 1
+size = 6.0377235
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=1998095151]
+transform = Transform3D(1, 0, 0, 0, 0.9952793, -0.09705135, 0, 0.09705135, 0.9952793, 0, -0.51504326, 2.0874414)
+
+[node name="Player_battle_Character" parent="." unique_id=190936425 instance=ExtResource("4_ahap6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.49999988, 2.627535)
+strength = 100
+speed = 100000
+
+[node name="Enemy_battle_character" parent="." unique_id=630908164 instance=ExtResource("3_b2eky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.489, 0.5570867)
+speed = 1000000
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=694515385]
+
+[node name="MoveSelection" parent="CanvasLayer" unique_id=1501447819 instance=ExtResource("5_hb1yk")]
+visible = false
+offset_left = 53.0
+offset_top = 376.0
+offset_right = 217.0
+offset_bottom = 548.0
+
+[node name="AttackNumber" parent="." unique_id=23354424 instance=ExtResource("6_u810s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+
+[node name="AttackNumber2" parent="." unique_id=1787110824 instance=ExtResource("6_u810s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+
+[node name="AttackNumber3" parent="." unique_id=450327233 instance=ExtResource("6_u810s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+
+[node name="AttackNumber4" parent="." unique_id=1137212080 instance=ExtResource("6_u810s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+
+[node name="AttackNumber5" parent="." unique_id=797807147 instance=ExtResource("6_u810s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+
+[node name="AttackNumber6" parent="." unique_id=954831747 instance=ExtResource("6_u810s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+
+[node name="AttackNumber7" parent="." unique_id=576083127 instance=ExtResource("6_u810s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+
+[connection signal="tryToAttack" from="Player_battle_Character" to="." method="_on_player_battle_character_try_to_attack"]
+[connection signal="sendAttack" from="Enemy_battle_character" to="." method="_on_enemy_battle_character_send_attack"]

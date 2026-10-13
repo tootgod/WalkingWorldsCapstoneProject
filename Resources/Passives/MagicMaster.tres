@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MagicMaster" format=3 uid="uid://yjgb8og246bq"]
+
+[ext_resource type="Script" uid="uid://cvpnkuw3gf1ee" path="res://Scripts/Resources/Passives/MagicMaster.gd" id="1_of7ev"]
+
+[resource]
+script = ExtResource("1_of7ev")
+name = "Magic Master"
+metadata/_custom_type_script = "uid://cvpnkuw3gf1ee"
