@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://bnfwnx7bpksty"]
+
+[ext_resource type="Script" uid="uid://d18dpu52rbl34" path="res://Scripts/Resources/Equipment.gd" id="1_ngbdt"]
+[ext_resource type="Script" uid="uid://0lv0r56k81yn" path="res://Scripts/Resources/MaterialCost.gd" id="1_pk6ra"]
+
+[sub_resource type="Resource" id="Resource_hb1yk"]
+script = ExtResource("1_pk6ra")
+metadata/_custom_type_script = "uid://0lv0r56k81yn"
+
+[resource]
+script = ExtResource("1_ngbdt")
+costArray = Array[ExtResource("1_pk6ra")]([SubResource("Resource_hb1yk")])
+metadata/_custom_type_script = "uid://d18dpu52rbl34"
