@@ -10,10 +10,14 @@ extends CharacterBody3D
 @export var currentMana:int = 10
 
 #put variables for equipment here when that system is developed
+@export var equippedWeapon:Equipment
+@export var equippedArmor:Equipment
+@export var equippedAccessory:Equipment
 
 @export_group("Battle Stats")
 @export var defense: int = 10
 @export var maxHealth: int = 10
+@export var maxMana: int = 10
 @export var willpower: int = 10
 @export var strength: int = 10
 @export var intelligence: int = 10
@@ -23,6 +27,7 @@ extends CharacterBody3D
 @export_group("Battle Stat Remainders")
 @export var defenseRemainder: float
 @export var healthRemainder: float
+@export var manaRemainder: float
 @export var willpowerRemainder: float
 @export var strengthRemainder: float
 @export var intelligenceRemainder: float
@@ -69,9 +74,11 @@ func try_attack() -> Move:
 
 
 func reciveAttack(move:Move,user:BattleCharacter):
-	
-	var damageToTake:int = int(((2.8 * move.power *(user.strength/defense))/50) + 2)
-	
+	var damageToTake:int
+	if move.mainAttackType == GlobalData.attackType.PHYSICAL:
+		damageToTake = int(((2.8 * move.power *(user.strength/defense))/50) + 2)
+	elif move.mainAttackType == GlobalData.attackType.MAGICAL:
+		damageToTake = int(((2.8 * move.power *(user.intelligence/willpower))/50) + 2)
 	currentHealth -= damageToTake
 	
 	createDamageParticle(damageToTake)

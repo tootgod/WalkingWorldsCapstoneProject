@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bpaixwb52t8da"]
+[gd_scene format=3 uid="uid://c2dnxgspy5h5x"]
 
 [ext_resource type="Texture2D" uid="uid://br74g171yxhvx" path="res://White Checkered Texture flat.png" id="1_hvnqj"]
 [ext_resource type="Script" uid="uid://ck5ru4w340y1g" path="res://BattleSystemManager.gd" id="1_teshm"]

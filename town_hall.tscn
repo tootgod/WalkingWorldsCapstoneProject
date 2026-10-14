@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dx1j27frt1jwq"]
+[gd_scene format=3 uid="uid://bs3bjaf4554g2"]
 
 [ext_resource type="Script" uid="uid://crciirkp66gwp" path="res://Scripts/TownHall.gd" id="1_mvqhw"]
 [ext_resource type="PackedScene" uid="uid://bdkalaunec0ps" path="res://Assets/TempAssets/KenneyAssets/kenney_fantasy-town-kit_2.0/Models/FBX format/wall-corner.fbx" id="2_731qn"]
