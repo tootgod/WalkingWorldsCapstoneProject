@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b43ku0pjt5rqb" path="res://Scenes/enemy_battle_character.tscn" id="3_b2eky"]
 [ext_resource type="PackedScene" uid="uid://dqdc3os15lb8g" path="res://Scenes/player_battle_character.tscn" id="4_ahap6"]
 [ext_resource type="PackedScene" uid="uid://bixgg0vhe11n7" path="res://move_selection.tscn" id="5_hb1yk"]
-[ext_resource type="PackedScene" uid="uid://bg0xtj7l5m6yp" path="res://Scenes/attack_number.tscn" id="6_u810s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvj1l"]
 albedo_color = Color(0, 0.50383776, 6.738305e-07, 1)
@@ -58,27 +57,6 @@ offset_left = 53.0
 offset_top = 376.0
 offset_right = 217.0
 offset_bottom = 548.0
-
-[node name="AttackNumber" parent="." unique_id=23354424 instance=ExtResource("6_u810s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
-
-[node name="AttackNumber2" parent="." unique_id=1787110824 instance=ExtResource("6_u810s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
-
-[node name="AttackNumber3" parent="." unique_id=450327233 instance=ExtResource("6_u810s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
-
-[node name="AttackNumber4" parent="." unique_id=1137212080 instance=ExtResource("6_u810s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
-
-[node name="AttackNumber5" parent="." unique_id=797807147 instance=ExtResource("6_u810s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
-
-[node name="AttackNumber6" parent="." unique_id=954831747 instance=ExtResource("6_u810s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
-
-[node name="AttackNumber7" parent="." unique_id=576083127 instance=ExtResource("6_u810s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
 
 [connection signal="tryToAttack" from="Player_battle_Character" to="." method="_on_player_battle_character_try_to_attack"]
 [connection signal="sendAttack" from="Enemy_battle_character" to="." method="_on_enemy_battle_character_send_attack"]

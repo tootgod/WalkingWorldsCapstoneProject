@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://b50sj22io723o"]
+
+[ext_resource type="Script" uid="uid://6lfp1cabqxpm" path="res://Scripts/Resources/Moves.gd" id="1_826s2"]
+[ext_resource type="Script" uid="uid://c67hj2d2nr8ip" path="res://Scripts/Resources/PassiveAbility.gd" id="2_dlxwq"]
+[ext_resource type="Script" uid="uid://byw70jil3xeno" path="res://Scripts/Resources/CharacterClass.gd" id="3_4l6fw"]
+
+[sub_resource type="Resource" id="Resource_o2j81"]
+script = ExtResource("1_826s2")
+name = "Sword Attack"
+secondaryType = 5
+power = 50
+manaCost = 2
+metadata/_custom_type_script = "uid://6lfp1cabqxpm"
+
+[resource]
+script = ExtResource("3_4l6fw")
+className = "Warrior"
+movesPerLevelDict = Dictionary[int, ExtResource("1_826s2")]({
+1: SubResource("Resource_o2j81")
+})
+metadata/_custom_type_script = "uid://byw70jil3xeno"
