@@ -34,7 +34,7 @@ extends CharacterBody3D
 @export var speedRemainder: float
 @export var luckRemainder: float
 
-const ATTACK_NUMBER = preload("uid://bg0xtj7l5m6yp")
+const ATTACK_NUMBER = preload("res://Scenes/attack_number.tscn")
 @export var isComputerControlled: bool = true
 var wantsToAttack:bool = false
 

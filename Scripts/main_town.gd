@@ -1,5 +1,5 @@
 extends Node3D
-const TOWN_MENU = preload("uid://d3x263mywo5ij")
+const TOWN_MENU = preload("res://Scenes/town_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
