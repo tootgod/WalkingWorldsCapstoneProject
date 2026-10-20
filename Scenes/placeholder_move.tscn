@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://boc0jj3mvkhc4" path="res://Assets/TempAssets/UI/AssembledUI/MoveButton.png" id="1_ashtp"]
 [ext_resource type="Texture2D" uid="uid://b4k8srik7jbud" path="res://icon.svg" id="2_jxyfc"]
-[ext_resource type="Script" uid="uid://m464fakpnash" path="res://MoveButton.gd" id="2_qywjk"]
+[ext_resource type="Script" uid="uid://m464fakpnash" path="res://Scripts/MoveButton.gd" id="2_qywjk"]
+
 
 [node name="Placeholder Move" type="TextureButton" unique_id=1151416512]
 visible = false

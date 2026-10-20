@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://ybbujwmkjuc"]
 
-[ext_resource type="Script" uid="uid://c0sq404m2t5kd" path="res://Scripts/main_town.gd" id="1_3bl34"]
+[ext_resource type="Script" uid="uid://c0sq404m2t5kd" path="res://Scripts/main_town.gd" id="1_i3axq"]
 [ext_resource type="Texture2D" uid="uid://br74g171yxhvx" path="res://White Checkered Texture flat.png" id="2_yij50"]
-[ext_resource type="Script" uid="uid://ryj2n5uatcqq" path="res://Scripts/SlidingCamera.gd" id="3_b5e04"]
 [ext_resource type="Script" uid="uid://dub6dlq58ok6s" path="res://Scripts/TouchDetector.gd" id="3_i3axq"]
 [ext_resource type="PackedScene" uid="uid://by287x1xhkp1o" path="res://Assets/TempAssets/KenneyAssets/kenney_castle-kit/Models/GLB format/bridge-draw.glb" id="4_i3axq"]
 [ext_resource type="PackedScene" uid="uid://oj0kutunptuu" path="res://Assets/TempAssets/KenneyAssets/kenney_castle-kit/Models/GLB format/wall-pillar.glb" id="5_qocxq"]
@@ -11,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dvgww7y1m54vi" path="res://Assets/TempAssets/KenneyAssets/kenney_castle-kit/Models/GLB format/wall-narrow-gate.glb" id="8_8bi2h"]
 [ext_resource type="PackedScene" uid="uid://bxj48xk16ai4g" path="res://Assets/TempAssets/KenneyAssets/kenney_castle-kit/Models/GLB format/metal-gate.glb" id="9_mlpcd"]
 [ext_resource type="PackedScene" uid="uid://dx1j27frt1jwq" path="res://Scenes/town_hall.tscn" id="10_k8bpe"]
+[ext_resource type="Script" uid="uid://ryj2n5uatcqq" path="res://Scripts/SlidingCamera.gd" id="11_qocxq"]
 [ext_resource type="PackedScene" uid="uid://bgg585od5hdgn" path="res://Scenes/player_controlled_character.tscn" id="11_yij50"]
 [ext_resource type="PackedScene" uid="uid://me84xwa0nteb" path="res://Assets/TempAssets/KenneyAssets/kenney_graveyard-kit_5.0/Models/GLB format/character-skeleton.glb" id="13_i3axq"]
 
@@ -37,7 +37,7 @@ size = Vector3(60, 1, 60)
 size = Vector3(0.84887695, 0.7337036, 0.5756836)
 
 [node name="Main Town" type="Node3D" unique_id=1475342060]
-script = ExtResource("1_3bl34")
+script = ExtResource("1_i3axq")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=763376634]
 
@@ -360,7 +360,7 @@ transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.70710
 projection = 1
 fov = 40.0
 size = 12.0
-script = ExtResource("3_b5e04")
+script = ExtResource("11_qocxq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1716534552]
 transform = Transform3D(0.8704564, -0.43961158, 0.22146623, 0.18340065, 0.7071533, 0.6828605, -0.45680395, -0.55378324, 0.69617116, 8.368971, 7.2231293, 0.15054893)

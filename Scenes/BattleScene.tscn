@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bpaixwb52t8da"]
 
-[ext_resource type="Script" uid="uid://ck5ru4w340y1g" path="res://Scripts/Resources/BattleSystemManager.gd" id="1_b2eky"]
+[ext_resource type="Script" uid="uid://ck5ru4w340y1g" path="res://Scripts/BattleSystemManager.gd" id="1_hb1yk"]
 [ext_resource type="Texture2D" uid="uid://br74g171yxhvx" path="res://White Checkered Texture flat.png" id="2_ahap6"]
 [ext_resource type="PackedScene" uid="uid://b43ku0pjt5rqb" path="res://Scenes/enemy_battle_character.tscn" id="3_b2eky"]
 [ext_resource type="PackedScene" uid="uid://dqdc3os15lb8g" path="res://Scenes/player_battle_character.tscn" id="4_ahap6"]
-[ext_resource type="PackedScene" uid="uid://bixgg0vhe11n7" path="res://move_selection.tscn" id="5_hb1yk"]
+[ext_resource type="PackedScene" uid="uid://bixgg0vhe11n7" path="res://Scenes/move_selection.tscn" id="5_hb1yk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvj1l"]
 albedo_color = Color(0, 0.50383776, 6.738305e-07, 1)
@@ -21,7 +21,7 @@ size = Vector3(60, 1, 60)
 size = Vector3(60, 1, 60)
 
 [node name="BattleScene" type="Node3D" unique_id=530234072]
-script = ExtResource("1_b2eky")
+script = ExtResource("1_hb1yk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=322734291]
 

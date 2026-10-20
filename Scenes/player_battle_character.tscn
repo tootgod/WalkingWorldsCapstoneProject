@@ -2,10 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://mytuuojix633" path="res://Scenes/placeholder_battle_character.tscn" id="1_yrpbb"]
 [ext_resource type="PackedScene" uid="uid://ck2sr1uxyxlx" path="res://Assets/TempAssets/KenneyAssets/kenney_mini-characters/Models/GLB format/character-female-d.glb" id="2_ea15g"]
-[ext_resource type="Script" uid="uid://chcejx3oc7a5m" path="res://Scenes/player_battle_character.gd" id="2_fk2wc"]
+[ext_resource type="Script" uid="uid://chcejx3oc7a5m" path="res://Scripts/player_battle_character.gd" id="2_fk2wc"]
 [ext_resource type="Script" uid="uid://6lfp1cabqxpm" path="res://Scripts/Resources/Moves.gd" id="3_a7ymb"]
 [ext_resource type="Resource" uid="uid://dm5042is4j3r6" path="res://Resources/Moves/BasicAttack.tres" id="4_x5anu"]
 [ext_resource type="Resource" uid="uid://dqbiigi0w1xqy" path="res://Resources/Moves/Fireball.tres" id="5_whwby"]
+
 
 [node name="Player_battle_Character" unique_id=190936425 instance=ExtResource("1_yrpbb")]
 script = ExtResource("2_fk2wc")

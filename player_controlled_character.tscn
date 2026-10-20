@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c4f2cwppxwrod"]
+[gd_scene format=3 uid="uid://eob62yxtn5s1"]
 
 [ext_resource type="PackedScene" uid="uid://dw2f4y2gbsl40" path="res://Assets/TempAssets/KenneyAssets/kenney_mini-characters/Models/GLB format/character-female-e.glb" id="1_auiam"]
 [ext_resource type="Script" uid="uid://dxu8myo4bpm8b" path="res://Scripts/MovingCharacter.gd" id="1_jhx5n"]

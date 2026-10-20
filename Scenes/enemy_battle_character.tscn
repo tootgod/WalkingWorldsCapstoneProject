@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://b43ku0pjt5rqb"]
 
 [ext_resource type="PackedScene" uid="uid://mytuuojix633" path="res://Scenes/placeholder_battle_character.tscn" id="1_a8saj"]
-[ext_resource type="Script" uid="uid://d1iee0csk0vwg" path="res://Scenes/enemy_battle_character.gd" id="2_gy4ma"]
+[ext_resource type="Script" uid="uid://d1iee0csk0vwg" path="res://Scripts/enemy_battle_character.gd" id="2_gy4ma"]
 [ext_resource type="PackedScene" uid="uid://me84xwa0nteb" path="res://Assets/TempAssets/KenneyAssets/kenney_graveyard-kit_5.0/Models/GLB format/character-skeleton.glb" id="2_wagbc"]
 [ext_resource type="Script" uid="uid://6lfp1cabqxpm" path="res://Scripts/Resources/Moves.gd" id="3_dbukt"]
 [ext_resource type="Resource" uid="uid://dm5042is4j3r6" path="res://Resources/Moves/BasicAttack.tres" id="4_voafi"]
+
 
 [node name="Enemy_battle_character" unique_id=630908164 instance=ExtResource("1_a8saj")]
 script = ExtResource("2_gy4ma")

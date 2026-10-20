@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bixgg0vhe11n7"]
 
-[ext_resource type="PackedScene" uid="uid://bl8wka6vlnd12" path="res://placeholder_move.tscn" id="1_erq5g"]
-[ext_resource type="Script" uid="uid://bba7bb3hw0rdk" path="res://move_selection_grid.gd" id="1_sy1jp"]
+[ext_resource type="PackedScene" uid="uid://bl8wka6vlnd12" path="res://Scenes/placeholder_move.tscn" id="1_erq5g"]
+[ext_resource type="Script" uid="uid://bba7bb3hw0rdk" path="res://Scripts/move_selection_grid.gd" id="1_sy1jp"]
 
 [node name="MoveSelection" type="GridContainer" unique_id=1501447819]
 offset_right = 164.0
