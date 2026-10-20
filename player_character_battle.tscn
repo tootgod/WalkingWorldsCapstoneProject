@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://3choxv0uuxwm"]
-
-[ext_resource type="PackedScene" uid="uid://ck2sr1uxyxlx" path="res://Assets/TempAssets/KenneyAssets/kenney_mini-characters/Models/GLB format/character-female-d.glb" id="1_35cv8"]
-
-[node name="PlayerCharacterBattle" type="Node3D" unique_id=1220849138]
-
-[node name="character-female-d2" parent="." unique_id=600287383 instance=ExtResource("1_35cv8")]
