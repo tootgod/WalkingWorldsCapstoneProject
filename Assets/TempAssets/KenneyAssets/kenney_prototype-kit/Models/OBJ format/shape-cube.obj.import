@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c2fwvrqrsmkr3"
+path="res://.godot/imported/shape-cube.obj-bef0f0ba79488b1cc8a4f19801660dda.mesh"
+
+[deps]
+
+files=["res://.godot/imported/shape-cube.obj-bef0f0ba79488b1cc8a4f19801660dda.mesh"]
+
+source_file="res://Assets/TempAssets/KenneyAssets/kenney_prototype-kit/Models/OBJ format/shape-cube.obj"
+dest_files=["res://.godot/imported/shape-cube.obj-bef0f0ba79488b1cc8a4f19801660dda.mesh", "res://.godot/imported/shape-cube.obj-bef0f0ba79488b1cc8a4f19801660dda.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

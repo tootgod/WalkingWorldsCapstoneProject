@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dqscs1fn52ct6"
+path="res://.godot/imported/maki-vegetable.obj-affe04d6239d4fa2b0bf7cfb48424cd0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/maki-vegetable.obj-affe04d6239d4fa2b0bf7cfb48424cd0.mesh"]
+
+source_file="res://Assets/TempAssets/KenneyAssets/kenney_food-kit/Models/OBJ format/maki-vegetable.obj"
+dest_files=["res://.godot/imported/maki-vegetable.obj-affe04d6239d4fa2b0bf7cfb48424cd0.mesh", "res://.godot/imported/maki-vegetable.obj-affe04d6239d4fa2b0bf7cfb48424cd0.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

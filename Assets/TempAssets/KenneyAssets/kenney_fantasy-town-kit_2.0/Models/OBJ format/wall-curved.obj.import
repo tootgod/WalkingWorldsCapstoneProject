@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://rtyvohim4c8l"
+path="res://.godot/imported/wall-curved.obj-2d87a6c1075f1a0f4cf2ad8afe0671ef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-curved.obj-2d87a6c1075f1a0f4cf2ad8afe0671ef.mesh"]
+
+source_file="res://Assets/TempAssets/KenneyAssets/kenney_fantasy-town-kit_2.0/Models/OBJ format/wall-curved.obj"
+dest_files=["res://.godot/imported/wall-curved.obj-2d87a6c1075f1a0f4cf2ad8afe0671ef.mesh", "res://.godot/imported/wall-curved.obj-2d87a6c1075f1a0f4cf2ad8afe0671ef.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

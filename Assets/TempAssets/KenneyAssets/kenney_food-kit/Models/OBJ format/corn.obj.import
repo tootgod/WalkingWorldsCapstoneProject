@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://xmb60qcjn2d1"
+path="res://.godot/imported/corn.obj-232e8d2c075ab8d156bedd7fb4cecbcb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/corn.obj-232e8d2c075ab8d156bedd7fb4cecbcb.mesh"]
+
+source_file="res://Assets/TempAssets/KenneyAssets/kenney_food-kit/Models/OBJ format/corn.obj"
+dest_files=["res://.godot/imported/corn.obj-232e8d2c075ab8d156bedd7fb4cecbcb.mesh", "res://.godot/imported/corn.obj-232e8d2c075ab8d156bedd7fb4cecbcb.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
