@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cgjtv5gg6388f"]
+
+[ext_resource type="Script" uid="uid://ullng7otfosx" path="res://Scenes/equipment_button.gd" id="1_a630n"]
+[ext_resource type="Texture2D" uid="uid://b4k8srik7jbud" path="res://icon.svg" id="1_rdcd1"]
+
+[node name="EquipmentUI" type="MarginContainer" unique_id=1330072031]
+custom_minimum_size = Vector2(36.19, 30)
+custom_maximum_size = Vector2(36.19, 30)
+offset_right = 36.19
+offset_bottom = 30.0
+script = ExtResource("1_a630n")
+
+[node name="EquipmentButton" type="Button" parent="." unique_id=1485363975]
+layout_mode = 2
+
+[node name="Sprite" type="TextureRect" parent="EquipmentButton" unique_id=1291732873]
+layout_mode = 0
+offset_top = 12.0
+offset_right = 12.0
+offset_bottom = 24.0
+texture = ExtResource("1_rdcd1")
+expand_mode = 1
+
+[node name="NameLabel" type="Label" parent="EquipmentButton" unique_id=1825728663]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 18.391304
+offset_bottom = 10.0
+theme_override_font_sizes/font_size = 6
+text = "Name"
+
+[node name="LevelLabel" type="Label" parent="EquipmentButton" unique_id=2133424764]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 2.0
+offset_right = 33.173912
+offset_bottom = 9.0
+theme_override_font_sizes/font_size = 4
+text = "LV:0"
+
+[node name="MaterialCost1" type="TextureRect" parent="EquipmentButton" unique_id=2055385498]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 9.0
+offset_right = 23.0
+offset_bottom = 15.0
+texture = ExtResource("1_rdcd1")
+expand_mode = 1
+
+[node name="CostLabel" type="Label" parent="EquipmentButton/MaterialCost1" unique_id=1948286873]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -1.0
+offset_right = 19.173912
+offset_bottom = 6.0
+theme_override_font_sizes/font_size = 4
+text = "1"
+
+[node name="MaterialCost2" type="TextureRect" parent="EquipmentButton" unique_id=424717730]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 15.0
+offset_right = 23.0
+offset_bottom = 21.0
+texture = ExtResource("1_rdcd1")
+expand_mode = 1
+
+[node name="CostLabel" type="Label" parent="EquipmentButton/MaterialCost2" unique_id=2006057270]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -1.0
+offset_right = 19.173912
+offset_bottom = 6.0
+theme_override_font_sizes/font_size = 4
+text = "1"
+
+[node name="MaterialCost3" type="TextureRect" parent="EquipmentButton" unique_id=875823249]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 21.0
+offset_right = 23.0
+offset_bottom = 27.0
+texture = ExtResource("1_rdcd1")
+expand_mode = 1
+
+[node name="LevelLabel2" type="Label" parent="EquipmentButton/MaterialCost3" unique_id=68615328]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -1.0
+offset_right = 19.173912
+offset_bottom = 6.0
+theme_override_font_sizes/font_size = 4
+text = "1"

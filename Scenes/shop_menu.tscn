@@ -1,8 +1,9 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://c4gi6wydkxi28"]
 
-[ext_resource type="Script" path="res://Scripts/shop_menu.gd" id="1_menu"]
+[ext_resource type="Script" uid="uid://bqgia1j8b0wfa" path="res://Scripts/shop_menu.gd" id="1_menu"]
+[ext_resource type="PackedScene" uid="uid://cgjtv5gg6388f" path="res://Scenes/equipment_button.tscn" id="2_jhj42"]
 
-[node name="Shop Menu" type="Control"]
+[node name="Shop Menu" type="Control" unique_id=1872257]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_menu")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=515998459]
 layout_mode = 0
 offset_left = 78.0
 offset_top = 38.0
@@ -19,21 +20,156 @@ offset_right = 249.0
 offset_bottom = 89.0
 text = "SHOP"
 
-[node name="Enter Button" type="Button" parent="."]
+[node name="Enter Button" type="Button" parent="." unique_id=1576916682]
 layout_mode = 0
-offset_left = 73.0
-offset_top = 116.0
-offset_right = 249.0
-offset_bottom = 225.0
+offset_left = 48.0
+offset_top = 380.0
+offset_right = 224.0
+offset_bottom = 489.0
 text = "Enter"
 
-[node name="Close Button" type="Button" parent="."]
+[node name="Close Button" type="Button" parent="." unique_id=2140636913]
 layout_mode = 0
-offset_left = 73.0
-offset_top = 245.0
-offset_right = 249.0
-offset_bottom = 305.0
+offset_left = 64.0
+offset_top = 507.0
+offset_right = 240.0
+offset_bottom = 567.0
 text = "Close"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1311834334]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 89.0
+offset_right = 142.0
+offset_bottom = 362.91306
+
+[node name="VBoxContainer" type="GridContainer" parent="ScrollContainer" unique_id=741610247]
+layout_mode = 2
+offset_transform_enabled = true
+columns = 2
+
+[node name="MarginContainer" parent="ScrollContainer/VBoxContainer" unique_id=1330072031 instance=ExtResource("2_jhj42")]
+layout_mode = 2
+
+[node name="EquipmentButton" parent="ScrollContainer/VBoxContainer" unique_id=680371721 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton2" parent="ScrollContainer/VBoxContainer" unique_id=697742597 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton3" parent="ScrollContainer/VBoxContainer" unique_id=1960799297 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton4" parent="ScrollContainer/VBoxContainer" unique_id=936496686 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton5" parent="ScrollContainer/VBoxContainer" unique_id=561232293 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton6" parent="ScrollContainer/VBoxContainer" unique_id=802005685 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton7" parent="ScrollContainer/VBoxContainer" unique_id=212486352 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton8" parent="ScrollContainer/VBoxContainer" unique_id=1123788874 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton9" parent="ScrollContainer/VBoxContainer" unique_id=2002501070 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton10" parent="ScrollContainer/VBoxContainer" unique_id=1569396044 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton11" parent="ScrollContainer/VBoxContainer" unique_id=2005090105 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton12" parent="ScrollContainer/VBoxContainer" unique_id=97575557 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton13" parent="ScrollContainer/VBoxContainer" unique_id=2067110511 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton14" parent="ScrollContainer/VBoxContainer" unique_id=342526502 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton15" parent="ScrollContainer/VBoxContainer" unique_id=1228700561 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton16" parent="ScrollContainer/VBoxContainer" unique_id=1960362225 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton17" parent="ScrollContainer/VBoxContainer" unique_id=760474685 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton18" parent="ScrollContainer/VBoxContainer" unique_id=1547031478 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton19" parent="ScrollContainer/VBoxContainer" unique_id=2094275695 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
+
+[node name="EquipmentButton20" parent="ScrollContainer/VBoxContainer" unique_id=977313049 instance=ExtResource("2_jhj42")]
+propagate_maximum_size = false
+layout_mode = 2
+focus_mode = 2
+mouse_filter = 0
 
 [connection signal="pressed" from="Enter Button" to="." method="_on_enter_button_pressed"]
 [connection signal="pressed" from="Close Button" to="." method="_on_close_button_pressed"]

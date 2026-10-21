@@ -1,13 +1,17 @@
 class_name Equipment
 extends Resource
 
+
 @export var itemName:String
+##This contains the amount of materials needed as well as the material itself[br]
+##If there are more then 3 costs, any after 3 will be ignored
 @export var costArray:Array[MaterialCost]
 @export var passiveEffect:PassiveAbility
 @export var equipType:GlobalData.equipmentType
 ##Level 0 means item is a blueprint
 @export var equipmentLevel:int
 @export var rarity:GlobalData.rarityTiers
+@export var sprite:Texture2D = preload("res://icon.svg")
 
 ##equipment gives a bonus to the stat indicated
 @export_group("Bonus Battle Stats")
