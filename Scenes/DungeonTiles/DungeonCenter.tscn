@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://h7grm36bowor"]
+
+[ext_resource type="PackedScene" uid="uid://c4f5dga5h112n" path="res://Assets/TempAssets/KenneyAssets/kenney_modular-dungeon-kit_1.0/Models/GLB format/corridor-wide-intersection.glb" id="1_jnsla"]
+[ext_resource type="Script" uid="uid://h4y1kt1wxgsn" path="res://Scripts/DungeonPiece.gd" id="1_vuw6o"]
+[ext_resource type="PackedScene" uid="uid://dmvr27yo4efoo" path="res://Scenes/DungeonTiles/dungeon_corridor.tscn" id="2_xwgip"]
+
+[node name="DungeonCenter" type="Node3D" unique_id=1370487807]
+script = ExtResource("1_vuw6o")
+piecesList = Array[PackedScene]([ExtResource("2_xwgip")])
+
+[node name="corridor-wide-intersection2" parent="." unique_id=411475346 instance=ExtResource("1_jnsla")]
+metadata/asset_placer_res_id = "uid://c4f5dga5h112n"
+
+[node name="NextPoint" type="Marker3D" parent="." unique_id=244843337]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 8)
+
+[node name="NextPoint2" type="Marker3D" parent="." unique_id=1384426641]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -8)
+
+[node name="NextPoint3" type="Marker3D" parent="." unique_id=650848499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="NextPoint4" type="Marker3D" parent="." unique_id=681961441]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -8, 0, 0)

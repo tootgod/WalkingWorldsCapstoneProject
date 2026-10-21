@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dmvr27yo4efoo"]
+
+[ext_resource type="PackedScene" uid="uid://c2prlea4cqya8" path="res://Assets/TempAssets/KenneyAssets/kenney_modular-dungeon-kit_1.0/Models/GLB format/corridor-wide.glb" id="1_3n08h"]
+[ext_resource type="Script" uid="uid://h4y1kt1wxgsn" path="res://Scripts/DungeonPiece.gd" id="1_khyr7"]
+
+[node name="DungeonCorridor" type="Node3D" unique_id=2107570103]
+script = ExtResource("1_khyr7")
+
+[node name="corridor-wide2" type="Node3D" parent="." unique_id=2009294305 instance=ExtResource("1_3n08h")]
+metadata/asset_placer_res_id = "uid://c2prlea4cqya8"

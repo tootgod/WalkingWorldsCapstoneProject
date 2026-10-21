@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ddqip11rt7c0x"]
+
+[ext_resource type="PackedScene" uid="uid://h7grm36bowor" path="res://Scenes/DungeonTiles/DungeonCenter.tscn" id="1_loxbc"]
+[ext_resource type="Script" uid="uid://djss6iuq337wm" path="res://Scripts/dungeon_scene.gd" id="1_ux3f8"]
+
+[node name="DungeonScene" type="Node3D" unique_id=2042142279]
+script = ExtResource("1_ux3f8")
+
+[node name="DungeonCenter" parent="." unique_id=1370487807 instance=ExtResource("1_loxbc")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=276951515]
+transform = Transform3D(1, 0, 0, 0, 0.59290004, 0.8052761, 0, -0.8052761, 0.59290004, 0, 29.925308, 20.92975)
+size = 46.495827
