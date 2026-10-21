@@ -1,5 +1,6 @@
 extends Node3D
 const TOWN_MENU = preload("res://Scenes/town_menu.tscn")
+const SHOP_MENU = preload("res://Scenes/shop_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +14,11 @@ func _process(delta: float) -> void:
 
 func _on_town_hall_town_hall_pressed(event_position:Vector3) -> void:
 		$"UI".add_child(TOWN_MENU.instantiate())
+		$PlayerControlledCharacter.set_movement_target(event_position)
+
+
+func _on_shop_shop_pressed(event_position:Vector3) -> void:
+		$"UI".add_child(SHOP_MENU.instantiate())
 		$PlayerControlledCharacter.set_movement_target(event_position)
 
 

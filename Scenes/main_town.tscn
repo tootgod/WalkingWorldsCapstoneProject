@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dx1j27frt1jwq" path="res://Scenes/town_hall.tscn" id="10_k8bpe"]
 [ext_resource type="Script" uid="uid://ryj2n5uatcqq" path="res://Scripts/SlidingCamera.gd" id="11_qocxq"]
 [ext_resource type="PackedScene" uid="uid://bgg585od5hdgn" path="res://Scenes/player_controlled_character.tscn" id="11_yij50"]
+[ext_resource type="PackedScene" path="res://Scenes/shop.tscn" id="14_shop"]
 [ext_resource type="PackedScene" uid="uid://me84xwa0nteb" path="res://Assets/TempAssets/KenneyAssets/kenney_graveyard-kit_5.0/Models/GLB format/character-skeleton.glb" id="13_i3axq"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qvrrf"]
@@ -355,6 +356,9 @@ metadata/asset_placer_res_id = "uid://bxj48xk16ai4g"
 [node name="Town Hall" parent="NavigationRegion3D/Walls" unique_id=1128652608 instance=ExtResource("10_k8bpe")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.278284, 0.64999986, 0.7765579)
 
+[node name="Shop" parent="NavigationRegion3D/Walls" instance=ExtResource("14_shop")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.5, 0.64999986, 0.7765579)
+
 [node name="MainCamera" type="Camera3D" parent="." unique_id=441146192]
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0.85316956, 14.82, 16.555)
 projection = 1
@@ -380,5 +384,6 @@ shape = SubResource("BoxShape3D_8qf6b")
 
 [connection signal="area_touched" from="NavigationRegion3D/StaticBody3D/TouchDetectorComponent" to="." method="_on_touch_detector_component_area_touched"]
 [connection signal="town_hall_pressed" from="NavigationRegion3D/Walls/Town Hall" to="." method="_on_town_hall_town_hall_pressed"]
+[connection signal="shop_pressed" from="NavigationRegion3D/Walls/Shop" to="." method="_on_shop_shop_pressed"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

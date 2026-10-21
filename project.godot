@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="WalkingWorldsSeniorProject"
-run/main_scene="uid://ybbujwmkjuc"
+run/main_scene="res://welcome.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalManager="*uid://bkwgt17hjt02y"
+Auth="*res://auth/auth.gd"
 
 [display]
 

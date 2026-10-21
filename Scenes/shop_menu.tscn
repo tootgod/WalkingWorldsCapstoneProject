@@ -1,0 +1,39 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/shop_menu.gd" id="1_menu"]
+
+[node name="Shop Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 38.0
+offset_right = 249.0
+offset_bottom = 89.0
+text = "SHOP"
+
+[node name="Enter Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 116.0
+offset_right = 249.0
+offset_bottom = 225.0
+text = "Enter"
+
+[node name="Close Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 245.0
+offset_right = 249.0
+offset_bottom = 305.0
+text = "Close"
+
+[connection signal="pressed" from="Enter Button" to="." method="_on_enter_button_pressed"]
+[connection signal="pressed" from="Close Button" to="." method="_on_close_button_pressed"]
