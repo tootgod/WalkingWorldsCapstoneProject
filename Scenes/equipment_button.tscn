@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cgjtv5gg6388f"]
 
-[ext_resource type="Script" uid="uid://ullng7otfosx" path="res://Scenes/equipment_button.gd" id="1_a630n"]
+[ext_resource type="Script" uid="uid://ullng7otfosx" path="res://Scripts/equipment_button.gd" id="1_a630n"]
 [ext_resource type="Texture2D" uid="uid://b4k8srik7jbud" path="res://icon.svg" id="1_rdcd1"]
 
 [node name="EquipmentUI" type="MarginContainer" unique_id=1330072031]

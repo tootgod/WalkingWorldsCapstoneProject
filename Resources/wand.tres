@@ -2,10 +2,31 @@
 
 [ext_resource type="Script" uid="uid://0lv0r56k81yn" path="res://Scripts/Resources/MaterialCost.gd" id="1_ycxgk"]
 [ext_resource type="Script" uid="uid://d18dpu52rbl34" path="res://Scripts/Resources/Equipment.gd" id="2_m6j5e"]
+[ext_resource type="Resource" uid="uid://dxm2akliyc3ck" path="res://Resources/Materials/Iron.tres" id="2_ocvfo"]
 [ext_resource type="Texture2D" uid="uid://b4k8srik7jbud" path="res://icon.svg" id="3_451uh"]
+[ext_resource type="Resource" uid="uid://vtwusfwyg4r2" path="res://Resources/Materials/IronWood.tres" id="3_m8hid"]
+[ext_resource type="Resource" uid="uid://cg6spblq8offl" path="res://Resources/Materials/Wood.tres" id="4_01e0f"]
+
+[sub_resource type="Resource" id="Resource_llt01"]
+script = ExtResource("1_ycxgk")
+amount = 1
+material = ExtResource("2_ocvfo")
+metadata/_custom_type_script = "uid://0lv0r56k81yn"
+
+[sub_resource type="Resource" id="Resource_2bqds"]
+script = ExtResource("1_ycxgk")
+amount = 3
+material = ExtResource("3_m8hid")
+metadata/_custom_type_script = "uid://0lv0r56k81yn"
+
+[sub_resource type="Resource" id="Resource_o08t5"]
+script = ExtResource("1_ycxgk")
+amount = 2
+material = ExtResource("4_01e0f")
+metadata/_custom_type_script = "uid://0lv0r56k81yn"
 
 [resource]
 script = ExtResource("2_m6j5e")
 itemName = "Wand"
-costArray = Array[ExtResource("1_ycxgk")]([null])
+costArray = Array[ExtResource("1_ycxgk")]([SubResource("Resource_llt01"), SubResource("Resource_2bqds"), SubResource("Resource_o08t5")])
 metadata/_custom_type_script = "uid://d18dpu52rbl34"
