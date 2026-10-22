@@ -2,9 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://c2prlea4cqya8" path="res://Assets/TempAssets/KenneyAssets/kenney_modular-dungeon-kit_1.0/Models/GLB format/corridor-wide.glb" id="1_3n08h"]
 [ext_resource type="Script" uid="uid://h4y1kt1wxgsn" path="res://Scripts/DungeonPiece.gd" id="1_khyr7"]
+[ext_resource type="PackedScene" uid="uid://bdc4ofkt0meuo" path="res://Scenes/dungeon_marker.tscn" id="3_wtgqx"]
+[ext_resource type="PackedScene" uid="uid://c3q4cr6o76uq" path="res://Scenes/large_marker_deleter.tscn" id="4_qm5p4"]
 
 [node name="DungeonCorridor" type="Node3D" unique_id=2107570103]
 script = ExtResource("1_khyr7")
 
-[node name="corridor-wide2" type="Node3D" parent="." unique_id=2009294305 instance=ExtResource("1_3n08h")]
+[node name="corridor-wide2" parent="." unique_id=2009294305 instance=ExtResource("1_3n08h")]
 metadata/asset_placer_res_id = "uid://c2prlea4cqya8"
+
+[node name="DungeonMarker" parent="." unique_id=1967842234 instance=ExtResource("3_wtgqx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="DungeonMarker2" parent="." unique_id=2117579661 instance=ExtResource("3_wtgqx")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -8, 0, 0)
+
+[node name="MarkerDeleter" parent="." unique_id=1747188605 instance=ExtResource("4_qm5p4")]

@@ -11,7 +11,7 @@ func _ready() -> void:
 	for child in get_children():
 		if child is Marker3D:
 			pointsArray.append(child)
-		
+	
 	#placeAtAllNodes()
 	
 func placeAtAllNodes():
@@ -27,18 +27,24 @@ func placeAtAllNodes():
 					continue
 			add_sibling.call_deferred(piece)
 			piece.position = point.global_position
-			piece.rotation = point.global_rotation
+			piece.rotation += point.global_rotation
 			
-			pointsArray.erase(point)
 			point.queue_free()
 			
 
 func goldenPathBuilder(piece:DungeonPiece):
+	if pointsArray.is_empty():
+		return
 	var point = pointsArray.pick_random()
+	var i = 0
+	while point == null:
+		point = pointsArray.pick_random()
+		i += 1
+		if i>100:
+			return
 	pointsArray.erase(point)
-	
-	
-	piece.position = point.global_position
-	piece.rotation = point.global_rotation
-	
-	point.queue_free()
+	if point != null:
+		piece.position = point.global_position
+		piece.rotation = point.global_rotation
+		point.queue_free()
+		

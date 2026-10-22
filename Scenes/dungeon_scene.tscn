@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://h7grm36bowor" path="res://Scenes/DungeonTiles/DungeonCenter.tscn" id="1_loxbc"]
 [ext_resource type="Script" uid="uid://djss6iuq337wm" path="res://Scripts/dungeon_scene.gd" id="1_ux3f8"]
+[ext_resource type="PackedScene" uid="uid://dmvr27yo4efoo" path="res://Scenes/DungeonTiles/dungeon_corridor.tscn" id="2_yf8ta"]
 
 [node name="DungeonScene" type="Node3D" unique_id=2042142279]
 script = ExtResource("1_ux3f8")
+goldenPathArray = Array[PackedScene]([ExtResource("2_yf8ta"), ExtResource("2_yf8ta"), ExtResource("2_yf8ta"), ExtResource("2_yf8ta"), ExtResource("2_yf8ta"), ExtResource("2_yf8ta"), ExtResource("2_yf8ta"), ExtResource("2_yf8ta"), ExtResource("2_yf8ta"), ExtResource("2_yf8ta")])
 
 [node name="DungeonCenter" parent="." unique_id=1370487807 instance=ExtResource("1_loxbc")]
 
