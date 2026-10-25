@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ddj37ddwd0cl0"]
+
+[ext_resource type="Script" uid="uid://dub6dlq58ok6s" path="res://Scripts/TouchDetector.gd" id="1_c7p7g"]
+[ext_resource type="Script" uid="uid://h4y1kt1wxgsn" path="res://Scripts/DungeonPiece.gd" id="1_pu1gh"]
+[ext_resource type="PackedScene" uid="uid://c3q4cr6o76uq" path="res://Scenes/large_marker_deleter.tscn" id="2_pu1gh"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_xwgip"]
+cell_height = 0.01
+agent_radius = 0.0
+
+[node name="BaseDungeonTile" type="Node3D" unique_id=160938378]
+script = ExtResource("1_pu1gh")
+
+[node name="TouchBody" type="StaticBody3D" parent="." unique_id=1932106666]
+
+[node name="TouchDetectorComponent" type="Node" parent="TouchBody" unique_id=1740805564]
+script = ExtResource("1_c7p7g")
+metadata/_custom_type_script = "uid://dub6dlq58ok6s"
+
+[node name="MarkerDeleter" parent="." unique_id=1747188605 instance=ExtResource("2_pu1gh")]
+
+[node name="SidePath" type="Node3D" parent="." unique_id=299756031]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1613621565]
+navigation_mesh = SubResource("NavigationMesh_xwgip")
