@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://d3v327pw2ktcn"]
+
+[ext_resource type="Script" uid="uid://dpfygbxk44edm" path="res://Scripts/town_menu.gd" id="1_dmhmb"]
+
+[node name="GateMenu" type="Control" unique_id=105520813]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dmhmb")
+
+[node name="WalkButton" type="Button" parent="." unique_id=386318971]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 131.0
+offset_right = 213.0
+offset_bottom = 252.0
+text = "Go on a
+Walk"
+
+[node name="Label" type="Label" parent="." unique_id=768436420]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 65.0
+offset_right = 180.0
+offset_bottom = 116.0
+text = "Gate"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Close Button" type="Button" parent="." unique_id=42070387]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 411.0
+offset_right = 182.41284
+offset_bottom = 480.0
+text = "Close"
+
+[node name="Dungeon Button" type="Button" parent="." unique_id=351051141]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 283.0
+offset_right = 211.0
+offset_bottom = 404.0
+text = "Go to a
+Dungeon"
+
+[connection signal="pressed" from="Close Button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Dungeon Button" to="." method="_on_dungeon_button_pressed"]

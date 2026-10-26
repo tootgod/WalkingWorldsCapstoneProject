@@ -36,6 +36,9 @@ size = Vector3(60, 1, 60)
 [sub_resource type="BoxShape3D" id="BoxShape3D_8qf6b"]
 size = Vector3(0.84887695, 0.7337036, 0.5756836)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pxjvw"]
+size = Vector3(1.6954346, 1.9257202, 1.0390625)
+
 [node name="Main Town" type="Node3D" unique_id=1475342060]
 script = ExtResource("1_i3axq")
 
@@ -378,7 +381,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35703945, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01159668, 0.031841278, 0)
 shape = SubResource("BoxShape3D_8qf6b")
 
+[node name="GateTouchArea" type="Area3D" parent="." unique_id=14650040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54647607, 1.7420025, 10.183448)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GateTouchArea" unique_id=1406106543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03265226, 0.21636939, 0.01953125)
+shape = SubResource("BoxShape3D_pxjvw")
+
 [connection signal="area_touched" from="NavigationRegion3D/StaticBody3D/TouchDetectorComponent" to="." method="_on_touch_detector_component_area_touched"]
 [connection signal="town_hall_pressed" from="NavigationRegion3D/Walls/Town Hall" to="." method="_on_town_hall_town_hall_pressed"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
+[connection signal="input_event" from="GateTouchArea" to="." method="_on_gate_touch_area_input_event"]
