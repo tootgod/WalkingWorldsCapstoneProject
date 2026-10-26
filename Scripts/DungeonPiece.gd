@@ -71,8 +71,11 @@ func tryPlacePathAtPoint(point:Marker3D):
 		await get_tree().physics_frame
 	if is_inside_tree() and get_tree():
 		await get_tree().physics_frame
-	if piece != null:
-		for ol in piece.marker_deleter.get_overlapping_areas():
+	if self == null:
+		return
+	if piece != null and piece.marker_deleter != null:
+		var list = piece.marker_deleter.get_overlapping_areas().duplicate()
+		for ol in list:
 				if ol.get_parent() is DungeonPiece:
 					sidePathFailed = true
 		if piece.pointsArray.is_empty():

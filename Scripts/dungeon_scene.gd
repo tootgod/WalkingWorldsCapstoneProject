@@ -6,7 +6,7 @@ var dungeonChosen:bool = false
 
 
 func _ready() -> void:
-	for num in range(0,5):
+	for num in range(0,8):
 		var dungeon: DungeonGenerator = DUNGEON_GENERATOR.instantiate()
 		dungeonArray.append(dungeon)
 		add_child(dungeon)
