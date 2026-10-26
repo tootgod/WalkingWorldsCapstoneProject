@@ -1,11 +1,13 @@
+class_name DungeonGenerator
 extends Node3D
 
 @export var goldenPathArray:Array[PackedScene]
 const DUNGEON_BOSS_ROOM = preload("res://Scenes/DungeonTiles/dungeon_boss_room.tscn")
-var goldenPathPieces:Array[DungeonPiece]= [] 
-
+var goldenPathPieces:Array[DungeonPiece]= []
+signal generationFailed(currentDungeon:DungeonGenerator)
+signal generationCompleted(currentDungeon:DungeonGenerator)
+var failureSent:= false
 func _ready() -> void:
-	print("newTry")
 	var pathPiece:DungeonPiece = $DungeonCenter
 	goldenPathPieces.push_back(pathPiece)
 	goldenPathArray.shuffle()
@@ -49,18 +51,21 @@ func _ready() -> void:
 			child.connectAllonTouch(_on_touch_detector_component_area_touched)
 			child.getAllNavChildrenToChildOf($NavigationRegion3D)
 			child.deleteAllMarkerDeleters()
+	await get_tree().create_timer(0.5).timeout
+	generationCompleted.emit(self)
 	$NavigationRegion3D.bake_navigation_mesh()
-	print("dungeon Ready")
 	$ColorRect.queue_free()
 
 func _on_touch_detector_component_area_touched(event_position: Vector3) -> void:
-	print(event_position)
 	$PlayerControlledCharacter.set_movement_target(event_position)
 
 
 func resetScene():
+	if !failureSent:
+		generationFailed.emit(self)
+		failureSent = true
 	#await get_tree().create_timer(3).timeout
-	while true:
-		if is_inside_tree() and get_tree():
-			get_tree().reload_current_scene.call_deferred()
-			return
+	#while true:
+		#if is_inside_tree() and get_tree():
+			#
+			#return

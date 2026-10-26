@@ -33,14 +33,13 @@ func placeSidePaths():
 	#var newNode:Node3D = Node3D.new()
 	
 	if not piecesList.is_empty() and not pointsArray.is_empty():
-		print(pointsArray)
 		for point in pointsArray:
 			currentPath = []
 			await tryPlacePathAtPoint(point)
 			await get_tree().create_timer(0.1).timeout
 			var i := 0
 			while sidePathFailed and i < 20:
-				print("newTRy")
+				#print("newTRy")
 				i+=1
 				sidePathFailed = false
 				for p in currentPath:
@@ -50,7 +49,7 @@ func placeSidePaths():
 					await tryPlacePathAtPoint(point)
 				await get_tree().create_timer(0.1).timeout
 			if i ==20:
-					print("CriticalPathFail")
+					#print("CriticalPathFail")
 					break
 			
 			
