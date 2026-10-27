@@ -48,3 +48,7 @@ func finalizeDungeon(dungeon:DungeonGenerator):
 	else:
 		if dungeon != null:
 			dungeon.queue_free.call_deferred()
+
+
+func _on_texture_button_pressed() -> void:
+	get_tree().change_scene_to_file.call_deferred("res://Scenes/main_town.tscn")

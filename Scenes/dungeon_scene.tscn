@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://dr64i7h4dj65u"]
 
 [ext_resource type="Script" uid="uid://d1fqhvsv53fpn" path="res://Scripts/dungeon_scene.gd" id="1_loxbc"]
+[ext_resource type="Texture2D" uid="uid://vibb4ysi65p4" path="res://Assets/TempAssets/UI/kenney_ui-pack-pixel-adventure/Tiles/Small tiles/Thin outline/tile_0002.png" id="2_ux3f8"]
 
 [node name="DungeonScene" type="Node3D" unique_id=1389563361]
 script = ExtResource("1_loxbc")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1984861198]
+offset_left = 219.0
+offset_top = 7.0
+offset_right = 259.0
+offset_bottom = 47.0
+texture_normal = ExtResource("2_ux3f8")
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
