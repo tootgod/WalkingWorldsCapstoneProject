@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c3q4cr6o76uq"]
+
+[ext_resource type="Script" uid="uid://cfrcri3t2f7ay" path="res://Scripts/MarkerDeleter.gd" id="1_1jyws"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8qf6b"]
+size = Vector3(7.9, 1, 7.9)
+
+[node name="MarkerDeleter" type="Area3D" unique_id=1747188605]
+script = ExtResource("1_1jyws")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1324939547]
+shape = SubResource("BoxShape3D_8qf6b")

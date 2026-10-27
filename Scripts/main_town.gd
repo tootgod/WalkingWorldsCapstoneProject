@@ -1,5 +1,6 @@
 extends Node3D
 const TOWN_MENU = preload("res://Scenes/town_menu.tscn")
+const GATE_MENU = preload("uid://d3v327pw2ktcn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,3 +30,10 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventScreenTouch:
 		$PlayerControlledCharacter.set_movement_target($Area3D/CollisionShape3D.global_position)
+
+
+func _on_gate_touch_area_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	if event is InputEventScreenTouch:
+		$"UI".add_child(GATE_MENU.instantiate())
+		$PlayerControlledCharacter.set_movement_target(event_position)
+		

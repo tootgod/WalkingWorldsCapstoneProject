@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ddqip11rt7c0x"]
+
+[ext_resource type="Script" uid="uid://djss6iuq337wm" path="res://Scripts/dungeon_generator.gd" id="1_2jtma"]
+[ext_resource type="PackedScene" uid="uid://dmvr27yo4efoo" path="res://Scenes/DungeonTiles/dungeon_corridor.tscn" id="2_vxnsm"]
+[ext_resource type="PackedScene" uid="uid://bybca0mnrvx4u" path="res://Scenes/DungeonTiles/dungeon_corner_right.tscn" id="3_u45cc"]
+[ext_resource type="PackedScene" uid="uid://b2y0jtj8uq8f0" path="res://Scenes/DungeonTiles/dungeon_corner_left.tscn" id="4_lorkv"]
+[ext_resource type="PackedScene" uid="uid://bg1by58nxel0b" path="res://Scenes/DungeonTiles/dungeon_junction.tscn" id="5_8gyfi"]
+[ext_resource type="PackedScene" uid="uid://h7grm36bowor" path="res://Scenes/DungeonTiles/DungeonCenter.tscn" id="6_f588s"]
+[ext_resource type="PackedScene" uid="uid://bgg585od5hdgn" path="res://Scenes/player_controlled_character.tscn" id="7_84eyi"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_qvrrf"]
+
+[node name="DungeonGenerator" type="Node3D" unique_id=2042142279]
+script = ExtResource("1_2jtma")
+goldenPathArray = Array[PackedScene]([ExtResource("2_vxnsm"), ExtResource("2_vxnsm"), ExtResource("3_u45cc"), ExtResource("3_u45cc"), ExtResource("3_u45cc"), ExtResource("4_lorkv"), ExtResource("4_lorkv"), ExtResource("4_lorkv"), ExtResource("4_lorkv"), ExtResource("3_u45cc"), ExtResource("3_u45cc"), ExtResource("4_lorkv"), ExtResource("5_8gyfi"), ExtResource("5_8gyfi"), ExtResource("5_8gyfi"), ExtResource("5_8gyfi"), ExtResource("5_8gyfi"), ExtResource("5_8gyfi")])
+
+[node name="DungeonCenter" parent="." unique_id=160938378 instance=ExtResource("6_f588s")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=27573804]
+transform = Transform3D(-1, -8.742278e-08, 0, -3.821371e-15, 4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, 54.556778, 0)
+
+[node name="PlayerControlledCharacter" parent="." unique_id=1030696041 instance=ExtResource("7_84eyi")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.9139519, 0)
+
+[node name="Camera3D" type="Camera3D" parent="PlayerControlledCharacter" unique_id=276951515]
+transform = Transform3D(0.23570228, -0.18980543, 0.13974786, 0, 0.19763331, 0.2684254, -0.23570228, -0.18980543, 0.13974786, 2.8103175, 5.885021, 3.1375473)
+size = 46.495827
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1948202615]
+navigation_mesh = SubResource("NavigationMesh_qvrrf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=130318464]
+offset_left = -88.0
+offset_top = -76.0
+offset_right = 377.0
+offset_bottom = 672.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1058318510]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 78.0
+offset_right = 353.0
+offset_bottom = 600.0
+theme_override_font_sizes/font_size = 40
+text = "GENERATING DUNGEON"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
