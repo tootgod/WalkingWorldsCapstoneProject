@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MaterialItem" format=3 uid="uid://bal0u5at37oh1"]
+
+[ext_resource type="Script" uid="uid://dfxen0flmfwfv" path="res://Scripts/Resources/MaterialItem.gd" id="1_spn4w"]
+[ext_resource type="Texture2D" uid="uid://b4k8srik7jbud" path="res://icon.svg" id="2_d2dha"]
+
+[resource]
+script = ExtResource("1_spn4w")
+itemName = "Heart Wood"
+rarity = 2
+metadata/_custom_type_script = "uid://dfxen0flmfwfv"
