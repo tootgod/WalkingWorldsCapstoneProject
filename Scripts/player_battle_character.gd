@@ -23,3 +23,6 @@ func reciveAttack(move:Move,user:BattleCharacter):
 func _on_attack_timer_timeout() -> void:
 	super()
 	tryToAttack.emit(moveList)
+
+func restartAttackTimer():
+	$AttackTimer.start()

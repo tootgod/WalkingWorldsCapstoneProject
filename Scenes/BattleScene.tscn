@@ -40,14 +40,17 @@ size = 6.0377235
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=1998095151]
 transform = Transform3D(1, 0, 0, 0, 0.9952793, -0.09705135, 0, 0.09705135, 0.9952793, 0, -0.51504326, 2.0874414)
 
-[node name="Player_battle_Character" parent="." unique_id=190936425 instance=ExtResource("4_ahap6")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.49999988, 2.627535)
-strength = 100
-speed = 100000
-
 [node name="Enemy_battle_character" parent="." unique_id=630908164 instance=ExtResource("3_b2eky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.489, 0.5570867)
-speed = 1000000
+
+[node name="Player_battle_Character" parent="." unique_id=190936425 instance=ExtResource("4_ahap6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.04110807, 0.49999976, 2.0390089)
+
+[node name="Player_battle_Character2" parent="." unique_id=1306020333 instance=ExtResource("4_ahap6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.5815799, 0.49999976, 2.330596)
+
+[node name="Player_battle_Character3" parent="." unique_id=374898551 instance=ExtResource("4_ahap6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.93779916, 0.49999976, 2.2738008)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=694515385]
 
@@ -58,5 +61,7 @@ offset_top = 376.0
 offset_right = 217.0
 offset_bottom = 548.0
 
-[connection signal="tryToAttack" from="Player_battle_Character" to="." method="_on_player_battle_character_try_to_attack"]
 [connection signal="sendAttack" from="Enemy_battle_character" to="." method="_on_enemy_battle_character_send_attack"]
+[connection signal="tryToAttack" from="Player_battle_Character" to="." method="_on_player_battle_character_try_to_attack"]
+[connection signal="tryToAttack" from="Player_battle_Character2" to="." method="_on_player_battle_character_try_to_attack"]
+[connection signal="tryToAttack" from="Player_battle_Character3" to="." method="_on_player_battle_character_try_to_attack"]
