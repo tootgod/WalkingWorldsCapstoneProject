@@ -33,6 +33,13 @@ enum ClassType{PLAYER,ENEMY}
 ## A value of 0.5 means a stat every other level[br]
 ## A value of 1.5 means one stat every level, with a bonus stat every other level[br]
 ## Extrapolate from this to get any desired growth rate[br]
+@export var manaGrowth:float
+## Determines how much of a stat a character gains per level.[br]
+## Default is 1.0[br]
+## A value of 1.0 means one stat every level[br]
+## A value of 0.5 means a stat every other level[br]
+## A value of 1.5 means one stat every level, with a bonus stat every other level[br]
+## Extrapolate from this to get any desired growth rate[br]
 @export var willpowerGrowth:float
 ## Determines how much of a stat a character gains per level.[br]
 ## Default is 1.0[br]

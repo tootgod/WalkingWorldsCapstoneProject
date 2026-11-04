@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://be6fcrwj5b23v"]
+
+[ext_resource type="Script" uid="uid://6lfp1cabqxpm" path="res://Scripts/Resources/Moves.gd" id="1_lifvl"]
+
+[resource]
+script = ExtResource("1_lifvl")
+name = "Bow Shot"
+secondaryType = 4
+power = 60
+manaCost = 1
+metadata/_custom_type_script = "uid://6lfp1cabqxpm"

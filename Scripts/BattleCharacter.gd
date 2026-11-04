@@ -2,6 +2,11 @@ class_name BattleCharacter
 extends CharacterBody3D
 
 var rng:RandomNumberGenerator = RandomNumberGenerator.new()
+var modelScene:PackedScene = null
+
+var dead:bool = false
+
+@export var animationPlayer:AnimationPlayer
 
 @export var characterResource:CharacterResource:
 	set(value):
@@ -12,6 +17,10 @@ var rng:RandomNumberGenerator = RandomNumberGenerator.new()
 			passiveAbility = characterResource.passiveAbility
 			moveList = characterResource.moveList
 			currentLevel = characterResource.currentLevel
+			var modelPath = characterResource.characterModel
+			
+			modelScene = load(modelPath)
+			
 			
 			currentHealth = characterResource.currentHealth
 			currentMana = characterResource.currentMana
@@ -64,11 +73,19 @@ func _ready() -> void:
 	$AttackTimer.start($AttackTimer.wait_time)
 	#print($AttackTimer.wait_time)
 
+
 func _physics_process(delta: float) -> void:
 	if wantsToAttack:
 		waitForAttackProcess()
 
-
+func _process(delta: float) -> void:
+	if $ModelPivot.get_child_count() == 0 and modelScene.can_instantiate():
+		var modelInstance: = modelScene.instantiate()
+		$ModelPivot.add_child(modelInstance)
+		for child in modelInstance.get_children():
+			if child.name == "AnimationPlayer" and child is AnimationPlayer:
+				animationPlayer = child
+				break
 
 func waitForAttackProcess():
 	pass
@@ -79,8 +96,6 @@ func _on_attack_timer_timeout() -> void:
 	wantsToAttack = true
 
 ##Default Behavior is to play basic attack animation, override to get different effects when attacking
-func attackAnimation():
-	$AnimationPlayer.play("attack Animation")
 
 ##Returns a random valid attack from characters movelist[br]
 ##Otherwise returns null if no valid attack found for character
@@ -104,6 +119,10 @@ func reciveAttack(move:Move,user:BattleCharacter):
 	currentHealth -= damageToTake
 	
 	createDamageParticle(damageToTake)
+	if currentHealth < 1:
+		die()
+	if currentHealth > 0:
+		dead = false
 	
 	
 	
@@ -116,3 +135,9 @@ func createDamageParticle(number:int):
 	add_sibling(part)
 	part.position = position
 	part.position.y += .8
+
+func die():
+	dead = true
+	print(currentHealth)
+	animationPlayer.play("die")
+	
