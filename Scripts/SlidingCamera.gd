@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventScreenDrag:
+	if event is InputEventScreenDrag and current:
 		position.x += event.screen_velocity.x/10000
 		position.x = clampf(position.x,-5.84,6.324)
 		
