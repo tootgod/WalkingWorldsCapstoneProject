@@ -2,6 +2,8 @@ extends Node3D
 const TOWN_MENU = preload("res://Scenes/town_menu.tscn")
 const SHOP_MENU = preload("res://Scenes/shop_menu.tscn")
 const BAR_MENU = preload("res://Scenes/bar_menu.tscn")
+const GATE_MENU = preload("res://Scenes/gate_menu.tscn")
+const BATTLE_SCENE = preload("res://Scenes/BattleScene.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,10 +36,16 @@ func _on_touch_detector_component_area_touched(event_position: Vector3) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == $PlayerControlledCharacter:
-		
-		get_tree().change_scene_to_file.call_deferred("res://Scenes/BattleScene.tscn")
+		GlobalManager.loadBattle(BATTLE_SCENE)
+		#get_tree().change_scene_to_file.call_deferred("res://Scenes/BattleScene.tscn")
 
 
 func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventScreenTouch:
 		$PlayerControlledCharacter.set_movement_target($Area3D/CollisionShape3D.global_position)
+
+
+func _on_gate_touch_area_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	if event is InputEventScreenTouch and not event.pressed and not $UI.has_node("GateMenu"):
+		$"UI".add_child(GATE_MENU.instantiate())
+		$PlayerControlledCharacter.set_movement_target(event_position)

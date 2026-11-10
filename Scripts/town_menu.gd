@@ -23,3 +23,7 @@ func _on_log_out_button_pressed() -> void:
 	$"Log Out Button".disabled = true  # stop double taps while waiting for the server
 	await Auth.sign_out()
 	get_tree().change_scene_to_file("res://welcome.tscn")
+
+
+func _on_dungeon_button_pressed() -> void:
+	get_tree().change_scene_to_file.call_deferred("res://Scenes/dungeon_scene.tscn")

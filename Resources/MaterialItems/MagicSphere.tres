@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MaterialItem" format=3 uid="uid://c2ed5yqavx30w"]
+
+[ext_resource type="Script" uid="uid://dfxen0flmfwfv" path="res://Scripts/Resources/MaterialItem.gd" id="1_cfj5i"]
+[ext_resource type="Texture2D" uid="uid://b4k8srik7jbud" path="res://icon.svg" id="2_10ysy"]
+
+[resource]
+script = ExtResource("1_cfj5i")
+itemName = "Magic Sphere"
+rarity = 1
+metadata/_custom_type_script = "uid://dfxen0flmfwfv"

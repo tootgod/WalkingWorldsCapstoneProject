@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Resources/Equipment.gd" id="1_equipment"]
 [ext_resource type="Script" path="res://Scripts/Resources/MaterialCost.gd" id="2_cost"]
-[ext_resource type="Resource" path="res://Resources/Materials/Iron.tres" id="3_iron"]
+[ext_resource type="Resource" path="res://Resources/MaterialItems/Iron.tres" id="3_iron"]
 
 [sub_resource type="Resource" id="MaterialCost_iron"]
 script = ExtResource("2_cost")

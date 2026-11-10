@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterResource" format=3 uid="uid://dtsp2ujwn3srs"]
+
+[ext_resource type="Resource" uid="uid://n0iy7n3bh1v6" path="res://Resources/Unequiped.tres" id="1_u3xcg"]
+[ext_resource type="Script" uid="uid://6lfp1cabqxpm" path="res://Scripts/Resources/Moves.gd" id="2_8ecx8"]
+[ext_resource type="Script" uid="uid://c67hj2d2nr8ip" path="res://Scripts/Resources/PassiveAbility.gd" id="2_a1t26"]
+[ext_resource type="Script" uid="uid://byw70jil3xeno" path="res://Scripts/Resources/CharacterClass.gd" id="3_wnyxq"]
+[ext_resource type="Script" uid="uid://7yyldjrg5ovs" path="res://Scripts/Resources/Character.gd" id="3_x7b12"]
+[ext_resource type="Resource" uid="uid://dm5042is4j3r6" path="res://Resources/Moves/BasicAttack.tres" id="5_pbh47"]
+
+[sub_resource type="Resource" id="Resource_u3xcg"]
+script = ExtResource("3_wnyxq")
+className = "skelly"
+metadata/_custom_type_script = "uid://byw70jil3xeno"
+
+[resource]
+script = ExtResource("3_x7b12")
+displayName = "Skelly"
+battleClass = SubResource("Resource_u3xcg")
+moveList = Array[ExtResource("2_8ecx8")]([ExtResource("5_pbh47")])
+speed = 10000
+metadata/_custom_type_script = "uid://7yyldjrg5ovs"

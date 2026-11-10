@@ -14,3 +14,7 @@ func subscribeToAllMovesSendAttack(function:Callable):
 		get_node("Placeholder Move" + str(i)).sendAttack.connect(function)
 		
 	
+func resetGrid():
+	for i in range(0,7):
+		get_node("Placeholder Move" + str(i)).visible = false
+	

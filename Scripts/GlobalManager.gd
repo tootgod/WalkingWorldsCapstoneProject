@@ -5,8 +5,8 @@ const WAND = preload("res://Resources/wand.tres")
 const IRON_ARMOR = preload("res://Resources/iron_armor.tres")
 const CRAFTABLE_EQUIPMENT: Array[Equipment] = [SWORD, WAND, IRON_ARMOR]
 
-const IRON = preload("res://Resources/Materials/Iron.tres")
-const WOOD = preload("res://Resources/Materials/Wood.tres")
+const IRON = preload("res://Resources/MaterialItems/Iron.tres")
+const WOOD = preload("res://Resources/MaterialItems/Wood.tres")
 const IRON_WOOD = preload("res://Resources/Materials/IronWood.tres")
 const MAGIC_MASTER = preload("res://Resources/Passives/MagicMaster.tres")
 const BAR_UPGRADE_COST = 2
@@ -27,8 +27,20 @@ var materialInventoryDictonary: Dictionary[MaterialItem, int] = {
 	WOOD: 4,
 	IRON_WOOD: 3,
 }
-var playerLevel: int = 1
 var stepCount: int = 0
+
+var charGen:CharacterResourceGenerator = CharacterResourceGenerator.new()
+
+var playerCharacter1:CharacterResource = charGen.generateRandomCharacter()
+var playerCharacter2:CharacterResource = charGen.generateRandomCharacter()
+var playerCharacter3:CharacterResource = charGen.generateRandomCharacter()
+
+var oldCamera:Camera3D
+var currentBattle:Node3D
+
+var playerLevel: int:
+	get:
+		return playerCharacter1.currentLevel
 
 
 func addMaterialItemToInventory(material: MaterialItem) -> void:
@@ -103,3 +115,22 @@ func spendMaterial(material: MaterialItem, amount: int) -> bool:
 		return false
 	materialInventoryDictonary[material] -= amount
 	return true
+
+
+func loadBattle(battleScene:PackedScene):
+	oldCamera = get_viewport().get_camera_3d()
+	oldCamera.current = false
+
+	if battleScene.can_instantiate():
+		currentBattle = battleScene.instantiate()
+	get_tree().current_scene.add_child(currentBattle)
+	currentBattle.position.y += 1000
+	for child in currentBattle.get_children():
+		if child is Camera3D:
+			child.current = true
+			break
+
+
+func unloadBattle():
+	currentBattle.queue_free.call_deferred()
+	oldCamera.current = true

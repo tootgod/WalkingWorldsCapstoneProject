@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://ct4thw2xrdekr"]
+
+[ext_resource type="Script" uid="uid://6lfp1cabqxpm" path="res://Scripts/Resources/Moves.gd" id="1_s8ev8"]
+
+[resource]
+script = ExtResource("1_s8ev8")
+name = "Slash"
+secondaryType = 5
+power = 80
+manaCost = 2
+metadata/_custom_type_script = "uid://6lfp1cabqxpm"

@@ -8,8 +8,17 @@
 
 [resource]
 script = ExtResource("1_in1gy")
+className = "Wizard"
 movesPerLevelDict = Dictionary[int, ExtResource("1_krp6f")]({
 1: ExtResource("2_ul22t")
 })
 potentialPassives = Array[ExtResource("2_ph5ah")]([ExtResource("4_aie12")])
+defenseGrowth = 2.0
+healthGrowth = 5.0
+manaGrowth = 10.0
+willpowerGrowth = 5.0
+strengthGrowth = 2.0
+intelligenceGrowth = 10.0
+speedGrowth = 4.0
+luckGrowth = 2.0
 metadata/_custom_type_script = "uid://byw70jil3xeno"

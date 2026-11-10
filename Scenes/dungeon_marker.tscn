@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bdc4ofkt0meuo"]
+
+[ext_resource type="Script" uid="uid://c5786sl8mecb1" path="res://Scripts/dungeon_marker.gd" id="1_rodha"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qvrrf"]
+radius = 0.001
+
+[node name="DungeonMarker" type="Marker3D" unique_id=1967842234]
+script = ExtResource("1_rodha")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=756418375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815, 0)
+billboard = 1
+modulate = Color(1, 0, 0, 1)
+text = "Marker"
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1224186842]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=158615812]
+shape = SubResource("SphereShape3D_qvrrf")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
