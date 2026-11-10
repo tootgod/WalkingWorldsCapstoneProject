@@ -1,6 +1,7 @@
 extends Node3D
 const TOWN_MENU = preload("res://Scenes/town_menu.tscn")
 const SHOP_MENU = preload("res://Scenes/shop_menu.tscn")
+const BAR_MENU = preload("res://Scenes/bar_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +21,11 @@ func _on_town_hall_town_hall_pressed(event_position:Vector3) -> void:
 func _on_shop_shop_pressed(event_position:Vector3) -> void:
 		$"UI".add_child(SHOP_MENU.instantiate())
 		$PlayerControlledCharacter.set_movement_target(event_position)
+
+
+func _on_bar_pressed(_event_position: Vector3) -> void:
+	if not $UI.has_node("Bar Menu"):
+		$UI.add_child(BAR_MENU.instantiate())
 
 
 func _on_touch_detector_component_area_touched(event_position: Vector3) -> void:

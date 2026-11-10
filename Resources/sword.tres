@@ -13,5 +13,7 @@ metadata/_custom_type_script = "uid://0lv0r56k81yn"
 
 [resource]
 script = ExtResource("1_ngbdt")
+itemName = "Sword"
+bonusStrength = 2
 costArray = Array[ExtResource("1_pk6ra")]([SubResource("Resource_hb1yk")])
 metadata/_custom_type_script = "uid://d18dpu52rbl34"

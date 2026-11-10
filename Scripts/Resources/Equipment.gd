@@ -3,6 +3,7 @@ extends Resource
 
 
 @export var itemName:String
+@export_range(1, 99) var requiredPlayerLevel: int = 1
 ##This contains the amount of materials needed as well as the material itself[br]
 ##If there are more then 3 costs, any after 3 will be ignored
 @export var costArray:Array[MaterialCost]
@@ -56,8 +57,7 @@ extends Resource
 	get:
 		return processBonus(bonusLuck)
 
-func processBonus(value:int)->int:
-	if equipmentLevel == 0:
+func processBonus(value: int) -> int:
+	if value <= 0:
 		return value
-	else:
-		return value +(0.3*(value ** (equipmentLevel - 1)))
+	return value + maxi(0, equipmentLevel - 1)

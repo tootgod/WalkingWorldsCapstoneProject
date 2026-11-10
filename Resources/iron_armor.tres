@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Equipment" format=3]
+
+[ext_resource type="Script" path="res://Scripts/Resources/Equipment.gd" id="1_equipment"]
+[ext_resource type="Script" path="res://Scripts/Resources/MaterialCost.gd" id="2_cost"]
+[ext_resource type="Resource" path="res://Resources/Materials/Iron.tres" id="3_iron"]
+
+[sub_resource type="Resource" id="MaterialCost_iron"]
+script = ExtResource("2_cost")
+amount = 2
+material = ExtResource("3_iron")
+
+[resource]
+script = ExtResource("1_equipment")
+itemName = "Iron Armor"
+costArray = Array[ExtResource("2_cost")]([SubResource("MaterialCost_iron")])
+equipType = 1
+bonusDefense = 2
