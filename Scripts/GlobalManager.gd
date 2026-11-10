@@ -12,6 +12,12 @@ var playerCharacter3:CharacterResource = charGen.generateRandomCharacter()
 var oldCamera:Camera3D
 var currentBattle:Node3D
 
+signal momentumChanged(newMomentum:int)
+var momentum:int:
+	set(value):
+		momentum = clamp(value,0,300)
+		momentumChanged.emit(momentum)
+
 func addMaterialItemToInventory(newItem:MaterialItem):
 	if materialInventoryDictonary.has(newItem):
 		materialInventoryDictonary[newItem] += 1

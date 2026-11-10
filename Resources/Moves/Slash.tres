@@ -6,6 +6,7 @@
 script = ExtResource("1_s8ev8")
 name = "Slash"
 secondaryType = 5
-power = 80
+power = 90
 manaCost = 2
+momentumGeneration = 25
 metadata/_custom_type_script = "uid://6lfp1cabqxpm"

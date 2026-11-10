@@ -15,14 +15,15 @@ signal tryToAttack(moveArray:Array[Move],char:Node)
 
 func reciveAttack(move:Move,user:BattleCharacter):
 	super(move,user)
-	
-	animationPlayer.play("fall")
-	await animationPlayer.animation_finished
-	animationPlayer.play("static")
+	if !dead:
+		animationPlayer.play("fall")
+		await animationPlayer.animation_finished
+		animationPlayer.play("static")
 
 func _on_attack_timer_timeout() -> void:
-	super()
-	tryToAttack.emit(moveList,self)
+	if !dead:
+		super()
+		tryToAttack.emit(moveList,self)
 
 func restartAttackTimer():
 	$AttackTimer.start()

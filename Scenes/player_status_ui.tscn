@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://crqboj5vnsj3h"]
+
+[ext_resource type="Script" uid="uid://bao5lrn45303b" path="res://Scripts/player_status_ui.gd" id="1_fy7id"]
+
+[node name="PlayerStatusUI" type="Control" unique_id=1092798081]
+custom_minimum_size = Vector2(83, 90)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -186.75
+offset_bottom = -510.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_fy7id")
+
+[node name="MPLabel" type="Label" parent="." unique_id=802197392]
+layout_mode = 0
+offset_top = 53.0
+offset_right = 77.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "MP: 10/10"
+
+[node name="Name" type="Label" parent="." unique_id=985563504]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 47.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Name"
+
+[node name="HPLabel" type="Label" parent="." unique_id=429276061]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 40.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HP: 10/10"

@@ -8,7 +8,7 @@ extends BattleCharacter
 #->
 #Battle Scene recives info sends the attack to the target
 
-	
+signal tapped(char:BattleCharacter,event:InputEvent)
 
 func _on_attack_timer_timeout_enemy() -> void:
 	if !dead:
@@ -26,3 +26,9 @@ func waitForAttackProcess():
 	if !dead:
 		$"ModelPivot/character-skeleton2/AnimationPlayer".play("idle")
 	
+
+
+func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	if event is InputEventScreenTouch:
+		if !event.pressed:
+			tapped.emit(self,event)

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bba7bb3hw0rdk" path="res://Scripts/move_selection_grid.gd" id="1_sy1jp"]
 
 [node name="MoveSelection" type="GridContainer" unique_id=1501447819]
+visible = false
 offset_right = 164.0
 offset_bottom = 172.0
 offset_transform_enabled = true
@@ -35,3 +36,9 @@ layout_mode = 2
 
 [node name="Placeholder Move7" parent="." unique_id=1806983213 instance=ExtResource("1_erq5g")]
 layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="." unique_id=1751396778]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -200)
+text = "Hi"

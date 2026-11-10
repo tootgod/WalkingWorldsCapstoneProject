@@ -6,6 +6,8 @@ var modelScene:PackedScene = null
 
 var dead:bool = false
 
+signal downed(battleChar:BattleCharacter )
+
 @export var animationPlayer:AnimationPlayer
 
 @export var characterResource:CharacterResource:
@@ -35,14 +37,24 @@ var dead:bool = false
 			luck = characterResource.luck
 		
 
-var displayName: String = "Character"
+var displayName: String = "Character":
+	set(value):
+		displayName = value
+		nameChange.emit(displayName)
 var battleClass: CharacterClass
 var passiveAbility: PassiveAbility
 var moveList: Array[Move]
 var currentLevel:int = 1 
 
-var currentHealth: int = 10
-var currentMana:int = 10
+var currentHealth: int = 10:
+	set(value):
+		currentHealth = value
+		hpChange.emit(currentHealth,maxHealth)
+
+var currentMana:int = 10:
+	set(value):
+		currentMana = value
+		mpChange.emit(currentMana,maxMana)
 
 #put variables for equipment here when that system is developed
 #@export var equippedWeapon:Equipment = preload("res://Resources/Unequiped.tres")
@@ -51,8 +63,14 @@ var currentMana:int = 10
 
 #@export_group("Battle Stats")
 var defense: int = 10
-var maxHealth: int = 10#HP amount
-var maxMana: int = 10#MP amount
+var maxHealth: int = 10:#HP amount
+	set(value):
+		maxHealth = value
+		hpChange.emit(currentHealth,maxHealth)
+var maxMana: int = 10:#MP amount
+	set(value):
+		maxMana = value
+		mpChange.emit(currentMana,maxMana)
 var willpower: int = 10#Magical Damage Reduction
 var strength: int = 10#Physical Damage bonus
 var intelligence: int = 10#Magical Damage Bonus
@@ -65,13 +83,13 @@ const ATTACK_NUMBER = preload("res://Scenes/attack_number.tscn")
 var wantsToAttack:bool = false
 
 signal sendAttack(moveToUse:Move,user:BattleCharacter)
-
-
+signal nameChange(newName:String)
+signal hpChange(newCurrentHealth:int,newMaxHealth:int)
+signal mpChange(newCurrentMana:int,newMaxMana:int)
 
 func _ready() -> void:
 	$AttackTimer.wait_time = (.8- pow(1.01,-speed) * (1-5) + 5)
 	$AttackTimer.start($AttackTimer.wait_time)
-	#print($AttackTimer.wait_time)
 
 
 func _physics_process(delta: float) -> void:
@@ -140,4 +158,20 @@ func die():
 	dead = true
 	print(currentHealth)
 	animationPlayer.play("die")
+	downed.emit(self)
 	
+func getXpRewards()->int:
+	var xpReward:int = 0
+	xpReward += defense + maxHealth + willpower + strength + intelligence + speed + luck + maxMana
+	xpReward = xpReward * characterResource.currentLevel
+	return xpReward
+	
+func checkMoveMana(move:Move) -> bool:
+	if currentMana >= move.manaCost and GlobalManager.momentum >= move.momentumCost:
+		return true
+	else: return false
+	
+func removeMana(move:Move):
+	currentMana -= move.manaCost
+	GlobalManager.momentum += move.momentumGeneration
+	GlobalManager.momentum -= move.momentumCost

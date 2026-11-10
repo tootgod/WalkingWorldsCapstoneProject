@@ -8,7 +8,7 @@ extends Resource
 ##Level 0 means item is a blueprint
 @export var equipmentLevel:int
 @export var rarity:GlobalData.rarityTiers
-
+ 
 ##equipment gives a bonus to the stat indicated
 @export_group("Bonus Battle Stats")
 ##equipment gives a bonus to the stat indicated[br]
