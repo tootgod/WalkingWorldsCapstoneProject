@@ -5,7 +5,8 @@ extends Resource
 @export var battleClass: CharacterClass
 @export var passiveAbility: PassiveAbility
 @export var moveList: Array[Move]
-@export var currentLevel:int = 1 
+@export var currentLevel:int = 1
+@export var currentExperience: int = 0
 
 @export var characterModel:String
 

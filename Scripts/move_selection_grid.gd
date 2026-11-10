@@ -18,3 +18,5 @@ func resetGrid():
 	for i in range(0,7):
 		get_node("Placeholder Move" + str(i)).visible = false
 	
+func updateName(user:BattleCharacter):
+	$NameLabel.text = user.displayName

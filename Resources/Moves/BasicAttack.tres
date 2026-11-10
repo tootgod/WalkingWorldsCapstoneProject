@@ -7,4 +7,5 @@ script = ExtResource("1_w6a4t")
 name = "Punch"
 secondaryType = 6
 power = 40
+momentumGeneration = 50
 metadata/_custom_type_script = "uid://6lfp1cabqxpm"

@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://b43ku0pjt5rqb" path="res://Scenes/enemy_battle_character.tscn" id="3_b2eky"]
 [ext_resource type="PackedScene" uid="uid://dqdc3os15lb8g" path="res://Scenes/player_battle_character.tscn" id="4_ahap6"]
 [ext_resource type="PackedScene" uid="uid://bixgg0vhe11n7" path="res://Scenes/move_selection.tscn" id="5_hb1yk"]
+[ext_resource type="PackedScene" uid="uid://crqboj5vnsj3h" path="res://Scenes/player_status_ui.tscn" id="6_u810s"]
+[ext_resource type="PackedScene" uid="uid://bqrarplh6hjny" path="res://Scenes/momentum_ui.tscn" id="7_8uoga"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvj1l"]
 albedo_color = Color(0, 0.50383776, 6.738305e-07, 1)
@@ -43,6 +45,12 @@ transform = Transform3D(1, 0, 0, 0, 0.9952793, -0.09705135, 0, 0.09705135, 0.995
 [node name="Enemy_battle_character" parent="." unique_id=630908164 instance=ExtResource("3_b2eky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.489, 0.5570867)
 
+[node name="Enemy_battle_character2" parent="." unique_id=490410654 instance=ExtResource("3_b2eky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7384348, 0.489, -0.10268831)
+
+[node name="Enemy_battle_character3" parent="." unique_id=230612362 instance=ExtResource("3_b2eky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7803974, 0.489, -0.09700227)
+
 [node name="Player_battle_Character" parent="." unique_id=190936425 instance=ExtResource("4_ahap6")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.04110807, 0.49999976, 2.0390089)
 
@@ -55,13 +63,53 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.93
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=694515385]
 
 [node name="MoveSelection" parent="CanvasLayer" unique_id=1501447819 instance=ExtResource("5_hb1yk")]
-visible = false
 offset_left = 53.0
 offset_top = 376.0
 offset_right = 217.0
 offset_bottom = 548.0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=596937231]
+offset_left = 7.0
+offset_top = -7.0
+offset_right = 264.0
+offset_bottom = 83.0
+
+[node name="PlayerStatusUI2" parent="CanvasLayer/HBoxContainer" unique_id=511978979 instance=ExtResource("6_u810s")]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 60)
+
+[node name="PlayerStatusUI" parent="CanvasLayer/HBoxContainer" unique_id=1092798081 instance=ExtResource("6_u810s")]
+layout_mode = 2
+offset_transform_enabled = true
+
+[node name="PlayerStatusUI3" parent="CanvasLayer/HBoxContainer" unique_id=337552874 instance=ExtResource("6_u810s")]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 60)
+
+[node name="Momentum UI" parent="CanvasLayer" unique_id=1348058745 instance=ExtResource("7_8uoga")]
+offset_left = 54.0
+offset_top = 148.0
+offset_right = -57.0
+offset_bottom = -414.0
+mouse_filter = 1
+
 [connection signal="sendAttack" from="Enemy_battle_character" to="." method="_on_enemy_battle_character_send_attack"]
+[connection signal="tapped" from="Enemy_battle_character" to="." method="_on_enemy_battle_character_tapped"]
+[connection signal="sendAttack" from="Enemy_battle_character2" to="." method="_on_enemy_battle_character_send_attack"]
+[connection signal="tapped" from="Enemy_battle_character2" to="." method="_on_enemy_battle_character_tapped"]
+[connection signal="tapped" from="Enemy_battle_character3" to="." method="_on_enemy_battle_character_tapped"]
+[connection signal="downed" from="Player_battle_Character" to="." method="_on_player_battle_character_downed"]
+[connection signal="hpChange" from="Player_battle_Character" to="." method="_on_player_battle_character_hp_change"]
+[connection signal="mpChange" from="Player_battle_Character" to="." method="_on_player_battle_character_mp_change"]
+[connection signal="nameChange" from="Player_battle_Character" to="." method="_on_player_battle_character_name_change"]
 [connection signal="tryToAttack" from="Player_battle_Character" to="." method="_on_player_battle_character_try_to_attack"]
+[connection signal="hpChange" from="Player_battle_Character2" to="." method="_on_player_battle_character_2_hp_change"]
+[connection signal="mpChange" from="Player_battle_Character2" to="." method="_on_player_battle_character_2_mp_change"]
+[connection signal="nameChange" from="Player_battle_Character2" to="." method="_on_player_battle_character_2_name_change"]
 [connection signal="tryToAttack" from="Player_battle_Character2" to="." method="_on_player_battle_character_try_to_attack"]
+[connection signal="hpChange" from="Player_battle_Character3" to="." method="_on_player_battle_character_3_hp_change"]
+[connection signal="mpChange" from="Player_battle_Character3" to="." method="_on_player_battle_character_3_mp_change"]
+[connection signal="nameChange" from="Player_battle_Character3" to="." method="_on_player_battle_character_3_name_change"]
 [connection signal="tryToAttack" from="Player_battle_Character3" to="." method="_on_player_battle_character_try_to_attack"]

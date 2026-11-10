@@ -27,6 +27,7 @@ autoplay = &"idle"
 [node name="AttackDelay" type="Timer" parent="." index="3" unique_id=339694015]
 one_shot = true
 
+[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout_enemy"]
 [connection signal="timeout" from="AttackDelay" to="." method="_on_attack_delay_timeout"]
 
