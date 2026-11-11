@@ -10,16 +10,20 @@ extends BattleCharacter
 #
 #
 
-signal tryToAttack(moveArray:Array[Move])
+signal tryToAttack(moveArray:Array[Move],char:Node)
 
 
 func reciveAttack(move:Move,user:BattleCharacter):
 	super(move,user)
-	
-	$"character-female-d2/AnimationPlayer".play("fall")
-	await $"character-female-d2/AnimationPlayer".animation_finished
-	$"character-female-d2/AnimationPlayer".play("static")
+	if !dead:
+		animationPlayer.play("fall")
+		await animationPlayer.animation_finished
+		animationPlayer.play("static")
 
 func _on_attack_timer_timeout() -> void:
-	super()
-	tryToAttack.emit(moveList)
+	if !dead:
+		super()
+		tryToAttack.emit(moveList,self)
+
+func restartAttackTimer():
+	$AttackTimer.start()

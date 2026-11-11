@@ -1,55 +1,109 @@
 class_name BattleCharacter
 extends CharacterBody3D
 
-@export var displayName: String = "Character"
-@export var battleClass: CharacterClass
-@export var passiveAbility: PassiveAbility
-@export var moveList: Array[Move]
+var rng:RandomNumberGenerator = RandomNumberGenerator.new()
+var modelScene:PackedScene = null
 
-@export var currentHealth: int = 10
-@export var currentMana:int = 10
+var dead:bool = false
+
+signal downed(battleChar:BattleCharacter )
+
+@export var animationPlayer:AnimationPlayer
+
+@export var characterResource:CharacterResource:
+	set(value):
+		if value != null:
+			characterResource = value
+			displayName = characterResource.displayName
+			battleClass = characterResource.battleClass
+			passiveAbility = characterResource.passiveAbility
+			moveList = characterResource.moveList
+			currentLevel = characterResource.currentLevel
+			var modelPath = characterResource.characterModel
+			
+			modelScene = load(modelPath)
+			
+			
+			currentHealth = characterResource.currentHealth
+			currentMana = characterResource.currentMana
+			
+			defense = characterResource.defense
+			maxHealth = characterResource.maxHealth
+			maxMana = characterResource.maxMana
+			willpower = characterResource.willpower
+			strength = characterResource.strength
+			intelligence = characterResource.intelligence
+			speed = characterResource.speed
+			luck = characterResource.luck
+		
+
+var displayName: String = "Character":
+	set(value):
+		displayName = value
+		nameChange.emit(displayName)
+var battleClass: CharacterClass
+var passiveAbility: PassiveAbility
+var moveList: Array[Move]
+var currentLevel:int = 1 
+
+var currentHealth: int = 10:
+	set(value):
+		currentHealth = value
+		hpChange.emit(currentHealth,maxHealth)
+
+var currentMana:int = 10:
+	set(value):
+		currentMana = value
+		mpChange.emit(currentMana,maxMana)
 
 #put variables for equipment here when that system is developed
-@export var equippedWeapon:Equipment
-@export var equippedArmor:Equipment
-@export var equippedAccessory:Equipment
+#@export var equippedWeapon:Equipment = preload("res://Resources/Unequiped.tres")
+#@export var equippedArmor:Equipment = preload("res://Resources/Unequiped.tres")
+#@export var equippedAccessory:Equipment = preload("res://Resources/Unequiped.tres")
 
-@export_group("Battle Stats")
-@export var defense: int = 10
-@export var maxHealth: int = 10
-@export var maxMana: int = 10
-@export var willpower: int = 10
-@export var strength: int = 10
-@export var intelligence: int = 10
-@export var speed: int = 10 #speed shortens time between attacks, with diminishing returns
-@export var luck: int = 10
-
-@export_group("Battle Stat Remainders")
-@export var defenseRemainder: float
-@export var healthRemainder: float
-@export var manaRemainder: float
-@export var willpowerRemainder: float
-@export var strengthRemainder: float
-@export var intelligenceRemainder: float
-@export var speedRemainder: float
-@export var luckRemainder: float
+#@export_group("Battle Stats")
+var defense: int = 10
+var maxHealth: int = 10:#HP amount
+	set(value):
+		maxHealth = value
+		hpChange.emit(currentHealth,maxHealth)
+var maxMana: int = 10:#MP amount
+	set(value):
+		maxMana = value
+		mpChange.emit(currentMana,maxMana)
+var willpower: int = 10#Magical Damage Reduction
+var strength: int = 10#Physical Damage bonus
+var intelligence: int = 10#Magical Damage Bonus
+var speed: int = 10 #speed shortens time between attacks, with diminishing returns
+var luck: int = 10#Critical Hit chance
+ 
 
 const ATTACK_NUMBER = preload("res://Scenes/attack_number.tscn")
 @export var isComputerControlled: bool = true
 var wantsToAttack:bool = false
 
 signal sendAttack(moveToUse:Move,user:BattleCharacter)
+signal nameChange(newName:String)
+signal hpChange(newCurrentHealth:int,newMaxHealth:int)
+signal mpChange(newCurrentMana:int,newMaxMana:int)
 
 func _ready() -> void:
 	$AttackTimer.wait_time = (.8- pow(1.01,-speed) * (1-5) + 5)
-	$AttackTimer.start()
-	print($AttackTimer.wait_time)
+	$AttackTimer.start($AttackTimer.wait_time)
+
 
 func _physics_process(delta: float) -> void:
 	if wantsToAttack:
 		waitForAttackProcess()
 
-
+func _process(delta: float) -> void:
+	if $ModelPivot.get_child_count() == 0 and modelScene.can_instantiate():
+		var modelInstance: = modelScene.instantiate()
+		$ModelPivot.add_child(modelInstance)
+		for child in modelInstance.get_children():
+			if child.name == "AnimationPlayer" and child is AnimationPlayer:
+				animationPlayer = child
+				break
 
 func waitForAttackProcess():
 	pass
@@ -60,8 +114,6 @@ func _on_attack_timer_timeout() -> void:
 	wantsToAttack = true
 
 ##Default Behavior is to play basic attack animation, override to get different effects when attacking
-func attackAnimation():
-	$AnimationPlayer.play("attack Animation")
 
 ##Returns a random valid attack from characters movelist[br]
 ##Otherwise returns null if no valid attack found for character
@@ -79,9 +131,16 @@ func reciveAttack(move:Move,user:BattleCharacter):
 		damageToTake = int(((2.8 * move.power *(user.strength/defense))/50) + 2)
 	elif move.mainAttackType == GlobalData.attackType.MAGICAL:
 		damageToTake = int(((2.8 * move.power *(user.intelligence/willpower))/50) + 2)
+	
+	if rng.randi_range(0,luck) > 50:
+		damageToTake *= 2
 	currentHealth -= damageToTake
 	
 	createDamageParticle(damageToTake)
+	if currentHealth < 1:
+		die()
+	if currentHealth > 0:
+		dead = false
 	
 	
 	
@@ -94,3 +153,25 @@ func createDamageParticle(number:int):
 	add_sibling(part)
 	part.position = position
 	part.position.y += .8
+
+func die():
+	dead = true
+	print(currentHealth)
+	animationPlayer.play("die")
+	downed.emit(self)
+	
+func getXpRewards()->int:
+	var xpReward:int = 0
+	xpReward += defense + maxHealth + willpower + strength + intelligence + speed + luck + maxMana
+	xpReward = xpReward * characterResource.currentLevel
+	return xpReward
+	
+func checkMoveMana(move:Move) -> bool:
+	if currentMana >= move.manaCost and GlobalManager.momentum >= move.momentumCost:
+		return true
+	else: return false
+	
+func removeMana(move:Move):
+	currentMana -= move.manaCost
+	GlobalManager.momentum += move.momentumGeneration
+	GlobalManager.momentum -= move.momentumCost

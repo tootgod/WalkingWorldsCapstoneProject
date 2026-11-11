@@ -16,7 +16,7 @@ func _input(event: InputEvent) -> void:
 	if is_instance_valid(quest_container) and quest_container.is_visible_in_tree():
 		return
 
-	if event is InputEventScreenDrag:
+	if event is InputEventScreenDrag and current::
 		position.x += event.screen_velocity.x / 10000
 		position.x = clampf(position.x, -5.84, 6.324)
 

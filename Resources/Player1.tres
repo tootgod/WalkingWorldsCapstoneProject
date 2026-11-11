@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CharacterResource" format=3 uid="uid://bfg3bc0refbus"]
+
+[ext_resource type="Resource" uid="uid://n0iy7n3bh1v6" path="res://Resources/Unequiped.tres" id="1_7ugcd"]
+[ext_resource type="Resource" uid="uid://2q6ts7clsr5m" path="res://Resources/Classes/Wizard.tres" id="1_g1r4r"]
+[ext_resource type="Script" uid="uid://6lfp1cabqxpm" path="res://Scripts/Resources/Moves.gd" id="2_g1r4r"]
+[ext_resource type="Script" uid="uid://7yyldjrg5ovs" path="res://Scripts/Resources/Character.gd" id="3_slsdu"]
+[ext_resource type="Resource" uid="uid://dqbiigi0w1xqy" path="res://Resources/Moves/Fireball.tres" id="4_8frw3"]
+[ext_resource type="Resource" uid="uid://dm5042is4j3r6" path="res://Resources/Moves/BasicAttack.tres" id="5_btb83"]
+
+[resource]
+script = ExtResource("3_slsdu")
+displayName = "Player1"
+battleClass = ExtResource("1_g1r4r")
+moveList = Array[ExtResource("2_g1r4r")]([ExtResource("4_8frw3"), ExtResource("5_btb83")])
+speed = 100000000
+metadata/_custom_type_script = "uid://7yyldjrg5ovs"
