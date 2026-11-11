@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://cb2urkvgpbq6d"]
+
+[ext_resource type="Script" uid="uid://chishovli2v7o" path="res://Scripts/quest.gd" id="1_fhure"]
+
+[resource]
+script = ExtResource("1_fhure")
+id = "walk_5000"
+name = "Good day"
+description = "2.5 miles were around 5000 steps. It will took around 45 minutes to walk. Good excerise for a day. "
+breif_description = "Walk 2.5 Miles"
+target_steps = 5000
+reward_materials = 500
+metadata/_custom_type_script = "uid://chishovli2v7o"

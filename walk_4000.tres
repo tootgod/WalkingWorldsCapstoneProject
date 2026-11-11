@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://b6cxclk5qmoi1"]
+
+[ext_resource type="Script" uid="uid://chishovli2v7o" path="res://Scripts/quest.gd" id="1_nffvt"]
+
+[resource]
+script = ExtResource("1_nffvt")
+id = "walk_4000"
+name = "Getting There"
+description = "Getting there. Simple, walk 4000 steps. "
+breif_description = "Walk 2 mile"
+target_steps = 4000
+reward_materials = 200
+metadata/_custom_type_script = "uid://chishovli2v7o"

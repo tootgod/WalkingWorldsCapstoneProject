@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://1t6tt0mxcw7m"]
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://bov534oc3erfe"]
 
 [ext_resource type="Script" uid="uid://0lv0r56k81yn" path="res://Scripts/Resources/MaterialCost.gd" id="1_ycxgk"]
 [ext_resource type="Script" uid="uid://d18dpu52rbl34" path="res://Scripts/Resources/Equipment.gd" id="2_m6j5e"]

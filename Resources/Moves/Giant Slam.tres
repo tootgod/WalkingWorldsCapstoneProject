@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://bmlu5kbx65rbu"]
+
+[ext_resource type="Script" uid="uid://6lfp1cabqxpm" path="res://Scripts/Resources/Moves.gd" id="1_xcw4h"]
+
+[resource]
+script = ExtResource("1_xcw4h")
+name = "Giant Slam"
+secondaryType = 6
+power = 120
+manaCost = 3
+momentumGeneration = 10
+momentumCost = 100
+metadata/_custom_type_script = "uid://6lfp1cabqxpm"

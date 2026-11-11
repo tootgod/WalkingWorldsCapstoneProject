@@ -19,6 +19,9 @@ config/icon="res://icon.svg"
 
 GlobalManager="*uid://bkwgt17hjt02y"
 Auth="*res://auth/auth.gd"
+QuestManager="*res://Scripts/quest_manager.gd"
+HealthSteps="*res://health_test.gd"
+QuestRewards="*res://Scripts/QuestRewards.gd"
 
 [display]
 

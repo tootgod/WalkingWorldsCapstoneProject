@@ -6,4 +6,7 @@
 script = ExtResource("1_fkqox")
 name = "Fireball"
 mainAttackType = 1
+power = 70
+manaCost = 2
+momentumGeneration = 40
 metadata/_custom_type_script = "uid://6lfp1cabqxpm"

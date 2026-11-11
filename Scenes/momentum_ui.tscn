@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bqrarplh6hjny"]
+
+[ext_resource type="Script" uid="uid://m8qj81hhjc3a" path="res://Scripts/momentum_ui.gd" id="1_2ibfb"]
+
+[node name="Momentum UI" type="Control" unique_id=1348058745]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -111.0
+offset_bottom = -562.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ibfb")
+
+[node name="Label" type="Label" parent="." unique_id=889907931]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Momentum: 0/300"

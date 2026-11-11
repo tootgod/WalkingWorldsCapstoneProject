@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://d3v327pw2ktcn"]
 
 [ext_resource type="Script" uid="uid://dpfygbxk44edm" path="res://Scripts/town_menu.gd" id="1_dmhmb"]
+[ext_resource type="PackedScene" uid="uid://lc5e12a28hac" path="res://Scenes/WalkingMode.tscn" id="2_ikx88"]
 
-[node name="GateMenu" type="Control" unique_id=105520813]
+[node name="GateMenu" type="Control" unique_id=105520813 node_paths=PackedStringArray("walk_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +11,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dmhmb")
+walking_scene = ExtResource("2_ikx88")
+walk_button = NodePath("WalkButton")
 
 [node name="WalkButton" type="Button" parent="." unique_id=386318971]
 layout_mode = 0
@@ -47,5 +50,6 @@ offset_bottom = 404.0
 text = "Go to a
 Dungeon"
 
+[connection signal="pressed" from="WalkButton" to="." method="_on_go_on_walk_button_pressed"]
 [connection signal="pressed" from="Close Button" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Dungeon Button" to="." method="_on_dungeon_button_pressed"]

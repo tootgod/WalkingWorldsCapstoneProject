@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://dicn88jfjbu2o"]
+
+[ext_resource type="Script" uid="uid://chishovli2v7o" path="res://Scripts/quest.gd" id="1_icdxs"]
+
+[resource]
+script = ExtResource("1_icdxs")
+id = "walk_67"
+name = "67"
+description = "67"
+breif_description = "67"
+target_steps = 67
+reward_materials = 67
+metadata/_custom_type_script = "uid://chishovli2v7o"

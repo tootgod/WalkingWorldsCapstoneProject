@@ -1,7 +1,7 @@
 class_name TownCamera
 extends Camera3D
 
-
+@export var quest_container: Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,10 +13,12 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
+	if is_instance_valid(quest_container) and quest_container.is_visible_in_tree():
+		return
+
 	if event is InputEventScreenDrag and current:
-		position.x += event.screen_velocity.x/10000
-		position.x = clampf(position.x,-5.84,6.324)
-		
-		rotate_x(-event.screen_velocity.y/700000)
-		rotation_degrees.x = clampf(rotation_degrees.x,-55,-35)
-		
+		position.x += event.screen_velocity.x / 10000
+		position.x = clampf(position.x, -5.84, 6.324)
+
+		rotate_x(-event.screen_velocity.y / 700000)
+		rotation_degrees.x = clampf(rotation_degrees.x, -55, -35)

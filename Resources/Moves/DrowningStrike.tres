@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://c4uxjao2wpo8o"]
+
+[ext_resource type="Script" uid="uid://6lfp1cabqxpm" path="res://Scripts/Resources/Moves.gd" id="1_nityr"]
+
+[resource]
+script = ExtResource("1_nityr")
+name = "Drowning Strike"
+mainAttackType = 1
+secondaryType = 2
+power = 140
+manaCost = 3
+momentumGeneration = 40
+momentumCost = 200
+metadata/_custom_type_script = "uid://6lfp1cabqxpm"

@@ -8,4 +8,5 @@ name = "Bow Shot"
 secondaryType = 4
 power = 60
 manaCost = 1
+momentumGeneration = 30
 metadata/_custom_type_script = "uid://6lfp1cabqxpm"
