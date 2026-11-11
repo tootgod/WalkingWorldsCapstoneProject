@@ -29,6 +29,6 @@ metadata/_custom_type_script = "uid://0lv0r56k81yn"
 script = ExtResource("2_m6j5e")
 itemName = "Wand"
 requiredPlayerLevel = 2
-bonusIntelligence = 2
 costArray = Array[ExtResource("1_ycxgk")]([SubResource("Resource_llt01"), SubResource("Resource_2bqds"), SubResource("Resource_o08t5")])
+bonusIntelligence = 2
 metadata/_custom_type_script = "uid://d18dpu52rbl34"
