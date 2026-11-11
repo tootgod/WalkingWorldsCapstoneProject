@@ -12,7 +12,7 @@ func generateRandomCharacter()->CharacterResource:
 	var character:CharacterResource = CharacterResource.new()
 	character.displayName = nameArray.pick_random()
 	character.battleClass = classArray.pick_random()
-	if not character.battleClass.potentialPassives.is_empty():
+	if character.battleClass.potentialPassives.is_empty() != false:
 		character.passiveAbility = character.battleClass.potentialPassives.pick_random()
 	character.moveList.append(preload("res://Resources/Moves/BasicAttack.tres"))
 	if character.battleClass.movesPerLevelDict.has(0):

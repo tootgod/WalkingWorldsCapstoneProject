@@ -27,9 +27,8 @@ var materialInventoryDictonary: Dictionary[MaterialItem, int] = {
 	WOOD: 4,
 	IRON_WOOD: 3,
 }
-var stepCount: int = 0
-
 var charGen:CharacterResourceGenerator = CharacterResourceGenerator.new()
+var stepCount: int=0
 
 var playerCharacter1:CharacterResource = charGen.generateRandomCharacter()
 var playerCharacter2:CharacterResource = charGen.generateRandomCharacter()
@@ -50,8 +49,11 @@ var playerLevel: int:
 		return playerCharacter1.currentLevel
 
 
-func addMaterialItemToInventory(material: MaterialItem) -> void:
-	materialInventoryDictonary[material] = materialInventoryDictonary.get(material, 0) + 1
+func addMaterialItemToInventory(newItem:MaterialItem):
+	if materialInventoryDictonary.has(newItem):
+		materialInventoryDictonary[newItem] += 1
+	else:
+		materialInventoryDictonary.get_or_add(newItem,1)
 
 
 func materialCount(material: MaterialItem) -> int:
@@ -127,7 +129,7 @@ func spendMaterial(material: MaterialItem, amount: int) -> bool:
 func loadBattle(battleScene:PackedScene):
 	oldCamera = get_viewport().get_camera_3d()
 	oldCamera.current = false
-
+	
 	if battleScene.can_instantiate():
 		currentBattle = battleScene.instantiate()
 	get_tree().current_scene.add_child(currentBattle)
@@ -136,8 +138,8 @@ func loadBattle(battleScene:PackedScene):
 		if child is Camera3D:
 			child.current = true
 			break
-
-
+	
+	
 func unloadBattle():
 	currentBattle.queue_free.call_deferred()
 	oldCamera.current = true

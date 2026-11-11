@@ -156,8 +156,7 @@ func connectAllonTouch(callable:Callable):
 				
 
 func checkAllOverlap(signalNeeder:Callable):
-	if not overlapError.is_connected(signalNeeder):
-		overlapError.connect(signalNeeder)
+	overlapError.connect(signalNeeder)
 	for ol in marker_deleter.get_overlapping_areas():
 			if ol.get_parent() is DungeonPiece:
 				overlapError.emit()

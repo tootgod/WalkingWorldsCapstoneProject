@@ -3,8 +3,9 @@ var gate_menu_instance: Node
 const TOWN_MENU = preload("res://Scenes/town_menu.tscn")
 const SHOP_MENU = preload("res://Scenes/shop_menu.tscn")
 const BAR_MENU = preload("res://Scenes/bar_menu.tscn")
-const GATE_MENU = preload("res://Scenes/gate_menu.tscn")
-const BATTLE_SCENE = preload("res://Scenes/BattleScene.tscn")
+const GATE_MENU = preload("uid://d3v327pw2ktcn")
+const BATTLE_SCENE = preload("uid://bpaixwb52t8da")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

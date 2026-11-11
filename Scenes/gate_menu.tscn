@@ -50,6 +50,6 @@ offset_bottom = 404.0
 text = "Go to a
 Dungeon"
 
-[connection signal="pressed" from="WalkButton" to="." method="_on_go_on_walk_button_pressed"]
+[connection signal="pressed" from="WalkButton" to="." method="_on_walk_button_pressed"]
 [connection signal="pressed" from="Close Button" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Dungeon Button" to="." method="_on_dungeon_button_pressed"]

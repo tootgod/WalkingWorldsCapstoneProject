@@ -40,8 +40,7 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(0.1).timeout
 	for p in goldenPathPieces:
-		if p.overlapError.is_connected(resetScene):
-			p.overlapError.disconnect(resetScene)
+		p.overlapError.disconnect(resetScene)
 		p.checkAllMarkers()
 	for p in goldenPathPieces:
 		await p.placeSidePaths()

@@ -6,6 +6,7 @@ extends Control
 
 func _ready() -> void:
 	if walk_button == null:
+		push_error("Walk Button에 Go on a walk 버튼을 연결해주세요.")
 		return
 
 	if not walk_button.pressed.is_connected(_on_go_on_walk_button_pressed):
