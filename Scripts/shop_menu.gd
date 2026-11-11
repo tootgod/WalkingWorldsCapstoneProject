@@ -7,7 +7,17 @@ var creating := true
 @onready var recipes := $"Recipe Scroll/Recipes"
 
 
+func _ready() -> void:
+	resized.connect(update_recipe_columns)
+
+
+func update_recipe_columns() -> void:
+	var has_cards := creating or not GlobalManager.equipmentInventoryArray.is_empty()
+	recipes.columns = 2 if size.x >= 520.0 and has_cards else 1
+
+
 func refresh_cards() -> void:
+	update_recipe_columns()
 	for card in recipes.get_children():
 		recipes.remove_child(card)
 		card.queue_free()
@@ -27,6 +37,7 @@ func refresh_cards() -> void:
 
 func add_recipe_card(equipment: Equipment) -> void:
 	var panel := PanelContainer.new()
+	panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var background := StyleBoxFlat.new()
 	background.bg_color = Color(0, 0, 0, 0.35)
 	background.set_content_margin_all(10)
@@ -67,7 +78,7 @@ func add_recipe_card(equipment: Equipment) -> void:
 	details.add_child(costs)
 
 	var action := Button.new()
-	action.custom_minimum_size.y = 44
+	action.custom_minimum_size = Vector2(112, 44)
 	action.text = "Craft" if creating else "Upgrade"
 	if creating and GlobalManager.playerLevel < equipment.requiredPlayerLevel:
 		action.text = "Requires level %d" % equipment.requiredPlayerLevel

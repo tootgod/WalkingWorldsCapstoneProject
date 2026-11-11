@@ -6,7 +6,13 @@ extends Control
 
 
 func _ready() -> void:
+	resized.connect(update_roster_columns)
+	update_roster_columns()
 	refresh_menu()
+
+
+func update_roster_columns() -> void:
+	roster.columns = 2 if size.x >= 520.0 else 1
 
 
 func refresh_menu() -> void:
@@ -33,6 +39,7 @@ func refresh_menu() -> void:
 
 func add_recruit_card(id: StringName, recruit: Dictionary) -> void:
 	var panel := PanelContainer.new()
+	panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var background := StyleBoxFlat.new()
 	background.bg_color = Color(0, 0, 0, 0.35)
 	background.set_content_margin_all(10)
@@ -51,7 +58,8 @@ func add_recruit_card(id: StringName, recruit: Dictionary) -> void:
 	content.add_child(info)
 
 	var button := Button.new()
-	button.custom_minimum_size.y = 44
+	button.custom_minimum_size = Vector2(112, 44)
+	button.add_theme_font_size_override("font_size", 14)
 	content.add_child(button)
 	if hired:
 		button.text = "Remove from Party" if in_party else "Add to Party"
