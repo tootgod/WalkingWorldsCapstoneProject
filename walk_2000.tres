@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://bls7omid3pxtd"]
+
+[ext_resource type="Script" uid="uid://chishovli2v7o" path="res://Scripts/quest.gd" id="1_lt5s8"]
+
+[resource]
+script = ExtResource("1_lt5s8")
+id = "walk_2000"
+name = "First Step"
+description = "Take a first step. Simple, walk 2000 steps. "
+breif_description = "Walk 1 mile"
+metadata/_custom_type_script = "uid://chishovli2v7o"

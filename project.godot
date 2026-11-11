@@ -18,6 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalManager="*uid://bkwgt17hjt02y"
+QuestManager="*uid://dcgqa2umf6mld"
+HealthSteps="*uid://cqg7cxdxr42iw"
+QuestRewards="*uid://gq24wmicfw1x"
 
 [display]
 

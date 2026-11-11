@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://d3xaeigrrbfqt"]
+
+[ext_resource type="Script" uid="uid://chishovli2v7o" path="res://Scripts/quest.gd" id="1_vjsju"]
+
+[resource]
+script = ExtResource("1_vjsju")
+id = "walk_777"
+name = "Lucky"
+description = "Lucky 777"
+breif_description = "Lucky!"
+target_steps = 777
+reward_materials = 77
+metadata/_custom_type_script = "uid://chishovli2v7o"

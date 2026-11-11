@@ -13,13 +13,22 @@
 [ext_resource type="Script" uid="uid://ryj2n5uatcqq" path="res://Scripts/SlidingCamera.gd" id="11_qocxq"]
 [ext_resource type="PackedScene" uid="uid://bgg585od5hdgn" path="res://Scenes/player_controlled_character.tscn" id="11_yij50"]
 [ext_resource type="PackedScene" uid="uid://me84xwa0nteb" path="res://Assets/TempAssets/KenneyAssets/kenney_graveyard-kit_5.0/Models/GLB format/character-skeleton.glb" id="13_i3axq"]
+[ext_resource type="Script" uid="uid://bhvom6rnneb01" path="res://Scenes/quest_guy.gd" id="14_qocxq"]
+[ext_resource type="Script" uid="uid://chishovli2v7o" path="res://Scripts/quest.gd" id="16_8bi2h"]
+[ext_resource type="Script" uid="uid://dcgqa2umf6mld" path="res://Scripts/quest_manager.gd" id="17_6fcwo"]
+[ext_resource type="Resource" uid="uid://bls7omid3pxtd" path="res://walk_2000.tres" id="18_gg6s2"]
+[ext_resource type="Resource" uid="uid://b6cxclk5qmoi1" path="res://walk_4000.tres" id="19_dsscb"]
+[ext_resource type="Resource" uid="uid://cb2urkvgpbq6d" path="res://walk_5000.tres" id="20_c4s8w"]
+[ext_resource type="Resource" uid="uid://d3xaeigrrbfqt" path="res://walk_777.tres" id="20_dsscb"]
+[ext_resource type="Resource" uid="uid://dicn88jfjbu2o" path="res://walk_67.tres" id="21_c4s8w"]
+[ext_resource type="Resource" uid="uid://ipwhew3xpikl" path="res://test_qeust.tres" id="22_5ewui"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qvrrf"]
 vertices = PackedVector3Array(-29.778168, 1, -4, -10.778168, 1, -4, -10.278168, 1, -4.5, -10.278168, 1, -29.5, -29.778168, 1, -29.5, -8.778168, 1, -4.5, -8.528168, 1, -4, 8.221832, 1, -4, 8.471832, 1, -4.5, 9.971832, 1, -29.5, 9.971832, 1, -4.5, 10.471832, 1, -4, 29.471832, 1, -4, 29.471832, 1, -29.5, -10.778168, 1, 10.75, -10.278168, 1, 10.5, -10.278168, 1, -2.5, -10.778168, 1, -2.75, -29.778168, 1, 12, -10.778168, 1, 12, 10.471832, 1, -2.75, 9.971832, 1, -2.5, 9.971832, 1, 10.5, 10.471832, 1, 10.75, 29.471832, 1, 12, 10.471832, 1, 12, -9.278168, 2.25, 11, -8.778168, 2, 11, -8.778168, 2.25, -2.75, -9.278168, 2.25, -3, 8.471832, 2.25, -2.75, 8.971832, 2.25, -3, 8.471832, 2, 11, 8.971832, 2.25, 11, -1.7781677, 1.25, -1, 0.47183228, 1.25, -1.25, 0.47183228, 1.25, -1.75, -8.028168, 1, -1.75, -1.7781677, 1.25, 1.75, -8.028168, 1, 10, 0.47183228, 1, 10, 0.47183228, 1.25, 2, 2.4718323, 1.25, -1, 7.7218323, 1, -1.75, 2.4718323, 1.25, 1.75, 7.7218323, 1, 10, -0.7781677, 2.25, -0.25, -0.7781677, 2.25, 1, 1.4718323, 2.25, 1, 1.4718323, 2.25, -0.25, -9.778168, 1, 29.75, -9.778168, 1, 12.75, -29.778168, 1, 29.75, 10.221832, 1, 12.5, 8.721832, 1, 12.5, 8.971832, 1, 29.75, 29.471832, 1, 29.75, -8.778168, 1, 12.25)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 8), PackedInt32Array(8, 5, 3), PackedInt32Array(8, 3, 9), PackedInt32Array(5, 2, 3), PackedInt32Array(9, 10, 8), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 9), PackedInt32Array(12, 9, 13), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 17), PackedInt32Array(17, 14, 18), PackedInt32Array(17, 18, 0), PackedInt32Array(0, 1, 17), PackedInt32Array(14, 19, 18), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 23), PackedInt32Array(23, 20, 12), PackedInt32Array(23, 12, 24), PackedInt32Array(24, 25, 23), PackedInt32Array(20, 11, 12), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 29), PackedInt32Array(28, 29, 30), PackedInt32Array(30, 29, 31), PackedInt32Array(32, 30, 33), PackedInt32Array(33, 30, 31), PackedInt32Array(35, 34, 36), PackedInt32Array(36, 34, 37), PackedInt32Array(40, 39, 38), PackedInt32Array(38, 39, 37), PackedInt32Array(37, 34, 38), PackedInt32Array(38, 41, 40), PackedInt32Array(35, 36, 42), PackedInt32Array(42, 36, 43), PackedInt32Array(40, 44, 45), PackedInt32Array(45, 44, 43), PackedInt32Array(44, 42, 43), PackedInt32Array(40, 41, 44), PackedInt32Array(49, 48, 46), PackedInt32Array(46, 48, 47), PackedInt32Array(51, 50, 19), PackedInt32Array(19, 50, 18), PackedInt32Array(18, 50, 52), PackedInt32Array(55, 54, 53), PackedInt32Array(53, 25, 55), PackedInt32Array(55, 25, 24), PackedInt32Array(55, 24, 56), PackedInt32Array(51, 57, 50), PackedInt32Array(50, 57, 54), PackedInt32Array(50, 54, 55)]
 cell_height = 0.05
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qocxq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8bpe"]
 albedo_color = Color(0, 0.50383776, 6.738305e-07, 1)
 albedo_texture = ExtResource("2_yij50")
 albedo_texture_force_srgb = true
@@ -27,7 +36,7 @@ uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_qvrrf"]
-material = SubResource("StandardMaterial3D_qocxq")
+material = SubResource("StandardMaterial3D_k8bpe")
 size = Vector3(60, 1, 60)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qvrrf"]
@@ -358,17 +367,18 @@ metadata/asset_placer_res_id = "uid://bxj48xk16ai4g"
 [node name="Town Hall" parent="NavigationRegion3D/Walls" unique_id=1128652608 instance=ExtResource("10_k8bpe")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.278284, 0.64999986, 0.7765579)
 
-[node name="MainCamera" type="Camera3D" parent="." unique_id=441146192]
+[node name="MainCamera" type="Camera3D" parent="." unique_id=441146192 node_paths=PackedStringArray("quest_container")]
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0.85316956, 14.82, 16.555)
 projection = 1
 fov = 40.0
 size = 12.0
 script = ExtResource("11_qocxq")
+quest_container = NodePath("../CanvasLayer/QuestContainer/Quest_layout/Close")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1716534552]
 transform = Transform3D(0.8704564, -0.43961158, 0.22146623, 0.18340065, 0.7071533, 0.6828605, -0.45680395, -0.55378324, 0.69617116, 8.368971, 7.2231293, 0.15054893)
 
-[node name="PlayerControlledCharacter" parent="." unique_id=1030696041 instance=ExtResource("11_yij50")]
+[node name="PlayerControlledCharacter" parent="." unique_id=1030696041 groups=["player"] instance=ExtResource("11_yij50")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40258217, 1.1886358, 5.755437)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=732343625]
@@ -388,8 +398,93 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54647607, 1.7420025, 10.18
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03265226, 0.21636939, 0.01953125)
 shape = SubResource("BoxShape3D_pxjvw")
 
+[node name="Area3D2" type="Area3D" parent="." unique_id=1607701920 node_paths=PackedStringArray("label_3d", "dialogue_panel", "dialogue_text", "next_button", "quest_panel", "close_button")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4769115, 1.4901991, 3.2249446)
+script = ExtResource("14_qocxq")
+label_3d = NodePath("Label3D")
+dialogue_panel = NodePath("../CanvasLayer/PanelContainer")
+dialogue_text = NodePath("../CanvasLayer/PanelContainer/VBoxContainer/Label")
+next_button = NodePath("../CanvasLayer/PanelContainer/VBoxContainer/Button")
+quest_panel = NodePath("../CanvasLayer/QuestContainer")
+close_button = NodePath("../CanvasLayer/QuestContainer/Quest_layout/Close")
+
+[node name="character-skeleton2" parent="Area3D2" unique_id=1843011291 instance=ExtResource("13_i3axq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35703945, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=1268218608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01159668, 0.031841278, 0)
+shape = SubResource("BoxShape3D_8qf6b")
+
+[node name="Label3D" type="Label3D" parent="Area3D2" unique_id=1544882035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1155365, 0)
+billboard = 1
+text = "!"
+font_size = 300
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1962119952]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=23969210]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer" unique_id=1202792304]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer" unique_id=289803720]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer" unique_id=147902183]
+layout_mode = 2
+text = "Next"
+
+[node name="QuestContainer" type="PanelContainer" parent="CanvasLayer" unique_id=652781930]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/QuestContainer" unique_id=284071634]
+visible = false
+layout_mode = 2
+
+[node name="QuestProgress" type="Label" parent="CanvasLayer/QuestContainer/VBoxContainer" unique_id=1879879827]
+visible = false
+layout_mode = 2
+
+[node name="AcceptButton" type="Button" parent="CanvasLayer/QuestContainer/VBoxContainer" unique_id=885591223]
+visible = false
+layout_mode = 2
+
+[node name="Quest_layout" type="VBoxContainer" parent="CanvasLayer/QuestContainer" unique_id=1817595038]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/QuestContainer/Quest_layout" unique_id=147927231]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Quest_list" type="VBoxContainer" parent="CanvasLayer/QuestContainer/Quest_layout/ScrollContainer" unique_id=1457858152]
+layout_mode = 2
+
+[node name="Close" type="Button" parent="CanvasLayer/QuestContainer/Quest_layout" unique_id=1415828666]
+layout_mode = 2
+text = "Close Quest"
+
+[node name="Quest_Manager" type="Node" parent="." unique_id=697122230 node_paths=PackedStringArray("quest_list")]
+script = ExtResource("17_6fcwo")
+quests = Array[ExtResource("16_8bi2h")]([ExtResource("18_gg6s2"), ExtResource("19_dsscb"), ExtResource("20_c4s8w"), ExtResource("20_dsscb"), ExtResource("21_c4s8w"), ExtResource("22_5ewui")])
+quest_list = NodePath("../CanvasLayer/QuestContainer/Quest_layout/ScrollContainer/Quest_list")
+
 [connection signal="area_touched" from="NavigationRegion3D/StaticBody3D/TouchDetectorComponent" to="." method="_on_touch_detector_component_area_touched"]
 [connection signal="town_hall_pressed" from="NavigationRegion3D/Walls/Town Hall" to="." method="_on_town_hall_town_hall_pressed"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="input_event" from="GateTouchArea" to="." method="_on_gate_touch_area_input_event"]
+[connection signal="input_event" from="Area3D2" to="." method="_on_area_3d_2_input_event"]

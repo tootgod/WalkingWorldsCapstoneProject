@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://lc5e12a28hac"]
+
+[ext_resource type="Script" uid="uid://cnuenv2nn76b3" path="res://Scenes/walking_mode.gd" id="1_6who0"]
+[ext_resource type="PackedScene" uid="uid://bgg585od5hdgn" path="res://Scenes/player_controlled_character.tscn" id="2_svjg4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6sjcd"]
+albedo_color = Color(0.40636766, 0.958263, 0.56666976, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_7jrbs"]
+radius = 3.0
+height = 6.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2g3n"]
+albedo_color = Color(0.6901961, 0.5372549, 0.36862746, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7jrbs"]
+top_radius = 3.0
+bottom_radius = 3.0
+
+[node name="WalkingMode" type="Node3D" unique_id=99883376 node_paths=PackedStringArray("distance_label", "steps_label", "back_button", "reward_anchor")]
+script = ExtResource("1_6who0")
+distance_label = NodePath("CanvasLayer/VBoxContainer/Distance")
+steps_label = NodePath("CanvasLayer/VBoxContainer/steps_label")
+back_button = NodePath("CanvasLayer/VBoxContainer/Button")
+reward_anchor = NodePath("Reward")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1510714913]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=768342165]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -94.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Distance" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1355621992]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Amount of Steps: "
+
+[node name="steps_label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=417294389]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1476576669]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Go back"
+
+[node name="PlanetPivot" type="Node3D" parent="." unique_id=33080172]
+
+[node name="Planet" type="MeshInstance3D" parent="PlanetPivot" unique_id=1823898347]
+material_override = SubResource("StandardMaterial3D_6sjcd")
+mesh = SubResource("SphereMesh_7jrbs")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=232014939]
+transform = Transform3D(0.76106876, -0.0024267551, 0.6486666, 0.023413604, 0.99944437, -0.023731686, -0.6482485, 0.033249073, 0.76070255, 2.9742475, 3.7203488, 3.3888216)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=712632718]
+transform = Transform3D(0.6949461, 0, 0.7190618, 0, 1, 0, -0.7190618, 0, 0.6949461, 11.4323635, 22.11278, 14.401079)
+
+[node name="WalkingModel" parent="." unique_id=1030696041 groups=["player"] instance=ExtResource("2_svjg4")]
+process_mode = 4
+transform = Transform3D(0.7228646, 0, 0.6909897, 0, 1, 0, -0.6909897, 0, 0.7228646, -0.024469078, 3.0304456, -0.037615478)
+
+[node name="Road" type="Node3D" parent="." unique_id=692491235]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Road" unique_id=9779610]
+transform = Transform3D(-0.025128625, -0.71921927, 0.6943286, 0.9994638, -0.03265902, 0.0023420565, 0.020991638, 0.6940152, 0.7196543, 0.06541586, 0.034037113, -0.03190911)
+material_override = SubResource("StandardMaterial3D_u2g3n")
+mesh = SubResource("CylinderMesh_7jrbs")
+
+[node name="Reward" type="Marker3D" parent="." unique_id=7887689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.416133, 0)
+gizmo_extents = 1.0
