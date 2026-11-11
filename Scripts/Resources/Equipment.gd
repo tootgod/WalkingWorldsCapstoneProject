@@ -1,14 +1,19 @@
 class_name Equipment
 extends Resource
 
+
 @export var itemName:String
+@export_range(1, 99) var requiredPlayerLevel: int = 1
+##This contains the amount of materials needed as well as the material itself[br]
+##If there are more then 3 costs, any after 3 will be ignored
 @export var costArray:Array[MaterialCost]
 @export var passiveEffect:PassiveAbility
 @export var equipType:GlobalData.equipmentType
 ##Level 0 means item is a blueprint
 @export var equipmentLevel:int
 @export var rarity:GlobalData.rarityTiers
- 
+@export var sprite:Texture2D = preload("res://icon.svg")
+
 ##equipment gives a bonus to the stat indicated
 @export_group("Bonus Battle Stats")
 ##equipment gives a bonus to the stat indicated[br]
@@ -52,8 +57,7 @@ extends Resource
 	get:
 		return processBonus(bonusLuck)
 
-func processBonus(value:int)->int:
-	if equipmentLevel == 0:
+func processBonus(value: int) -> int:
+	if value <= 0:
 		return value
-	else:
-		return value +(0.3*(value ** (equipmentLevel - 1)))
+	return value + maxi(0, equipmentLevel - 1)

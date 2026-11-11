@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://btq5rmc0cttq8"]
+
+[ext_resource type="Script" uid="uid://dhsh7gnfelmmt" path="res://welcome.gd" id="1_welcome"]
+
+[node name="Welcome" type="Control" unique_id=1710374584]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_welcome")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1341122701]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16, 0.27, 0.22, 1)
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=673308142]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 40
+
+[node name="Content" type="VBoxContainer" parent="Margin" unique_id=25000914]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Title" type="Label" parent="Margin/Content" unique_id=934196058]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Walking Worlds"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Subtitle" type="Label" parent="Margin/Content" unique_id=480932574]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Welcome, traveler!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="StartButtons" type="VBoxContainer" parent="Margin/Content" unique_id=574149646]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LogInButton" type="Button" parent="Margin/Content/StartButtons" unique_id=1159346000]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Log In"
+
+[node name="SignUpButton" type="Button" parent="Margin/Content/StartButtons" unique_id=1574634773]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Create Account"
+
+[node name="Form" type="VBoxContainer" parent="Margin/Content" unique_id=1254454149]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Username" type="LineEdit" parent="Margin/Content/Form" unique_id=638957485]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Username"
+max_length = 20
+
+[node name="Email" type="LineEdit" parent="Margin/Content/Form" unique_id=1912170244]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Email"
+
+[node name="Password" type="LineEdit" parent="Margin/Content/Form" unique_id=1556872460]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Password (8+ characters)"
+secret = true
+
+[node name="SubmitButton" type="Button" parent="Margin/Content/Form" unique_id=1618364689]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Log In"
+
+[node name="BackButton" type="Button" parent="Margin/Content/Form" unique_id=1120129973]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"
+flat = true
+
+[node name="Status" type="Label" parent="Margin/Content" unique_id=157996711]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3

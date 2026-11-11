@@ -1,6 +1,8 @@
 extends Node3D
 var gate_menu_instance: Node
 const TOWN_MENU = preload("res://Scenes/town_menu.tscn")
+const SHOP_MENU = preload("res://Scenes/shop_menu.tscn")
+const BAR_MENU = preload("res://Scenes/bar_menu.tscn")
 const GATE_MENU = preload("uid://d3v327pw2ktcn")
 const BATTLE_SCENE = preload("uid://bpaixwb52t8da")
 
@@ -18,6 +20,16 @@ func _process(delta: float) -> void:
 func _on_town_hall_town_hall_pressed(event_position:Vector3) -> void:
 		$"UI".add_child(TOWN_MENU.instantiate())
 		$PlayerControlledCharacter.set_movement_target(event_position)
+
+
+func _on_shop_shop_pressed(event_position:Vector3) -> void:
+		$"UI".add_child(SHOP_MENU.instantiate())
+		$PlayerControlledCharacter.set_movement_target(event_position)
+
+
+func _on_bar_pressed(_event_position: Vector3) -> void:
+	if not $UI.has_node("Bar Menu"):
+		$UI.add_child(BAR_MENU.instantiate())
 
 
 func _on_touch_detector_component_area_touched(event_position: Vector3) -> void:

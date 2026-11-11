@@ -1,0 +1,71 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/Shop.gd" id="1_shop"]
+[ext_resource type="PackedScene" uid="uid://6scwsdhc5sey" path="res://Assets/TempAssets/KenneyAssets/kenney_fantasy-town-kit_2.0/Models/FBX format/wall-wood-corner.fbx" id="2_corner"]
+[ext_resource type="PackedScene" uid="uid://b8cchs6cypmsq" path="res://Assets/TempAssets/KenneyAssets/kenney_fantasy-town-kit_2.0/Models/FBX format/wall-wood-corner-edge.fbx" id="3_edge"]
+[ext_resource type="PackedScene" uid="uid://csn4sb77v8t76" path="res://Assets/TempAssets/KenneyAssets/kenney_fantasy-town-kit_2.0/Models/FBX format/wall-wood-door.fbx" id="4_door"]
+[ext_resource type="PackedScene" uid="uid://cssjs7e7jht2j" path="res://Assets/TempAssets/KenneyAssets/kenney_fantasy-town-kit_2.0/Models/FBX format/wall-wood-block.fbx" id="5_block"]
+[ext_resource type="PackedScene" uid="uid://cb7ufshijoeit" path="res://Assets/TempAssets/KenneyAssets/kenney_fantasy-town-kit_2.0/Models/FBX format/lantern.fbx" id="6_lantern"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ground"]
+size = Vector3(5, 0.3, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
+size = Vector3(5, 0.3, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_building"]
+size = Vector3(2.1422348, 1.0010681, 2.989746)
+
+[node name="Shop" type="Node3D"]
+script = ExtResource("1_shop")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_ground")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_ground")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="wall-wood-corner" parent="Model" instance=ExtResource("2_corner")]
+transform = Transform3D(8.419156e-07, 0, -1.0000024, 0, 1, 0, 1.0000024, 0, 8.419156e-07, -1, 0.1500001, 1)
+
+[node name="wall-wood-corner (1)" parent="Model" instance=ExtResource("2_corner")]
+transform = Transform3D(-1.0000029, 0, -9.685755e-07, 0, 1, 0, 9.685755e-07, 0, -1.0000029, -1, 0.1500001, -1)
+
+[node name="wall-wood-corner-edge" parent="Model" instance=ExtResource("3_edge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1500001, 1)
+
+[node name="wall-wood-corner-edge (1)" parent="Model" instance=ExtResource("3_edge")]
+transform = Transform3D(-5.662441e-07, 0, 1.0000013, 0, 1, 0, -1.0000013, 0, -5.662441e-07, 0, 0.1500001, -1)
+
+[node name="wall-wood-door" parent="Model" instance=ExtResource("4_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14999998, 0)
+
+[node name="wall-wood-block" parent="Model" instance=ExtResource("5_block")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.1500001, 0)
+
+[node name="wall-wood-block (1)" parent="Model" instance=ExtResource("5_block")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.1500001, 1)
+
+[node name="wall-wood-block (2)" parent="Model" instance=ExtResource("5_block")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.14999986, -1)
+
+[node name="lantern" parent="Model" instance=ExtResource("6_lantern")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.15, 0.7)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49056244, 0.65053403, -0.0026855469)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/StaticBody3D"]
+shape = SubResource("BoxShape3D_building")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40656942, 0.63391674, 0)
+shape = SubResource("BoxShape3D_building")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

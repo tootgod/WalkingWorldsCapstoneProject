@@ -19,6 +19,14 @@ offset_right = 172.0
 offset_bottom = 89.0
 text = "TOWN HALL"
 
+[node name="Log Out Button" type="Button" parent="." unique_id=1873402917]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 245.0
+offset_right = 249.0
+offset_bottom = 305.0
+text = "Log Out"
+
 [node name="Close Button" type="Button" parent="." unique_id=42070387]
 layout_mode = 0
 offset_left = 42.0
@@ -28,3 +36,4 @@ offset_bottom = 480.0
 text = "Close"
 
 [connection signal="pressed" from="Close Button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Log Out Button" to="." method="_on_log_out_button_pressed"]
