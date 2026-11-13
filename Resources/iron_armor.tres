@@ -13,6 +13,8 @@ material = ExtResource("3_iron")
 [resource]
 script = ExtResource("1_equipment")
 itemName = "Iron Armor"
+weaponRank = 2
 costArray = Array[ExtResource("2_cost")]([SubResource("MaterialCost_iron")])
 equipType = 1
-bonusDefense = 2
+equipmentLevel = 2
+bonusDefense = 5

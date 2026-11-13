@@ -9,6 +9,7 @@ enum ClassType{PLAYER,ENEMY}
 @export var potentialPassives:Array[PassiveAbility]= []
 @export var secondaryTypeWeaknesses:Array[GlobalData.secondaryTypes] = []
 @export var secondaryTypeRes:Array[GlobalData.secondaryTypes] = []
+@export var classRank:int = 1
 
 @export var classType: ClassType
 
