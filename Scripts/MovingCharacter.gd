@@ -11,8 +11,7 @@ func set_movement_target(movement_target: Vector3):
 	navigation_agent.set_target_position(movement_target)
 
 func _physics_process(delta):
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	
 		#move_and_slide()
 	# Do not query when the map has never synchronized and is empty.
 	if NavigationServer3D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
@@ -22,6 +21,9 @@ func _physics_process(delta):
 
 	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 	var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
+	if not is_on_floor():
+		new_velocity += get_gravity() * delta
+	
 	if navigation_agent.avoidance_enabled:
 		navigation_agent.set_velocity(new_velocity)
 	else:

@@ -3,11 +3,11 @@ extends Node3D
 ##Make sure to only use pieces that will fit. [br]
 ##Non Dungeon Pieces can be put in but are not expicity supported
 @export var piecesList:Array[PackedScene]
-
+@export var chanceEnemy:Area3D = null
 var pointsArray:Array[DungeonMarker]
 @onready var marker_deleter: Area3D = $MarkerDeleter
 @onready var side_path: Node3D = $SidePath
-
+const BATTLE_SCENE = preload("uid://bpaixwb52t8da")
 var sidePathFailed:bool = false
 var currentPath:Array[DungeonPiece]=[]
 
@@ -17,6 +17,11 @@ signal overlapError
 signal sidePathDone
 
 func _ready() -> void:
+	if chanceEnemy != null and rng.randi_range(0,1) == 1:
+		chanceEnemy.queue_free.call_deferred()
+	if chanceEnemy != null:
+		chanceEnemy.body_entered.connect(_body_enter)
+		
 	for child in get_children():
 		if child is Marker3D:
 			pointsArray.append(child)
@@ -180,3 +185,10 @@ func _on_marker_deleter_area_entered(area: Area3D) -> void:
 	if area.get_parent() is DungeonPiece:
 		if overlapError !=null:
 			overlapError.emit()
+
+func _body_enter(body:Node3D):
+	if body.name == "PlayerControlledCharacter":
+		chanceEnemy.queue_free.call_deferred()
+		GlobalManager.loadBattle(BATTLE_SCENE)
+		#get_tree().change_scene_to_file.call_deferred("res://Scenes/BattleScene.tscn")
+		

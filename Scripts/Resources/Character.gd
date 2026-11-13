@@ -21,42 +21,42 @@ extends Resource
 @export_group("Battle Stats")
 @export var defense: int = 10:#Physical Damage Reduction
 	get:
-		return defense + equippedAccessory.bonusDefense + equippedArmor.bonusDefense + equippedWeapon.bonusDefense
+		return defense + int(battleClass.defenseGrowth * (currentLevel-1)) + equippedAccessory.bonusDefense + equippedArmor.bonusDefense + equippedWeapon.bonusDefense
 	set(value):
 		defense = value
 @export var maxHealth: int = 10:#HP amount
 	get:
-		return maxHealth + equippedAccessory.bonusMaxHealth + equippedArmor.bonusMaxHealth + equippedWeapon.bonusMaxHealth
+		return maxHealth + int(battleClass.healthGrowth * (currentLevel-1)) + equippedAccessory.bonusMaxHealth + equippedArmor.bonusMaxHealth + equippedWeapon.bonusMaxHealth
 	set(value):
 		maxHealth = value
 @export var maxMana: int = 10:#MP amount
 	get:
-		return maxMana + equippedAccessory.bonusMaxMana + equippedArmor.bonusMaxMana + equippedWeapon.bonusMaxMana
+		return maxMana + int(battleClass.manaGrowth * (currentLevel-1)) + equippedAccessory.bonusMaxMana + equippedArmor.bonusMaxMana + equippedWeapon.bonusMaxMana
 	set(value):
 		maxMana = value
 @export var willpower: int = 10:#Magical Damage Reduction
 	get:
-		return willpower + equippedAccessory.bonusWillpower + equippedArmor.bonusWillpower + equippedWeapon.bonusWillpower
+		return willpower + int(battleClass.willpowerGrowth * (currentLevel-1)) + equippedAccessory.bonusWillpower + equippedArmor.bonusWillpower + equippedWeapon.bonusWillpower
 	set(value):
 		willpower = value
 @export var strength: int = 10:#Physical Damage bonus
 	get():
-		return strength + equippedAccessory.bonusStrength + equippedArmor.bonusStrength + equippedWeapon.bonusStrength
+		return strength + int(battleClass.strengthGrowth * (currentLevel-1)) + equippedAccessory.bonusStrength + equippedArmor.bonusStrength + equippedWeapon.bonusStrength
 	set(value):
 		strength = value
 @export var intelligence: int = 10:#Magical Damage Bonus
 	get:
-		return intelligence + equippedAccessory.bonusIntelligence + equippedArmor.bonusIntelligence + equippedWeapon.bonusIntelligence
+		return intelligence + int(battleClass.intelligenceGrowth * (currentLevel-1)) + equippedAccessory.bonusIntelligence + equippedArmor.bonusIntelligence + equippedWeapon.bonusIntelligence
 	set(value):
 		intelligence = value
 @export var speed: int = 10: #speed shortens time between attacks, with diminishing returns
 	get:
-		return speed + equippedAccessory.bonusSpeed + equippedArmor.bonusSpeed + equippedWeapon.bonusSpeed
+		return speed + int(battleClass.speedGrowth * (currentLevel-1)) + equippedAccessory.bonusSpeed + equippedArmor.bonusSpeed + equippedWeapon.bonusSpeed
 	set(value):
 		speed = value
 @export var luck: int = 10:#Critical Hit chance
 	get:
-		return luck + equippedAccessory.bonusLuck + equippedArmor.bonusLuck + equippedWeapon.bonusLuck
+		return luck + int(battleClass.luckGrowth * (currentLevel-1)) + equippedAccessory.bonusLuck + equippedArmor.bonusLuck + equippedWeapon.bonusLuck
 	set(value):
 		luck = value
 
