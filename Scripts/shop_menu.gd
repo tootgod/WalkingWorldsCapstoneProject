@@ -67,7 +67,7 @@ func add_recipe_card(equipment: Equipment) -> void:
 	costs.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	var lines := PackedStringArray()
 	if creating:
-		lines.append("Requires Lv %d" % equipment.requiredPlayerLevel)
+		lines.append("Requires Lv %d" % equipment.weaponRank)
 	for cost in equipment.costArray:
 		var material_name := cost.material.itemName
 		if material_name.is_empty():
@@ -80,8 +80,8 @@ func add_recipe_card(equipment: Equipment) -> void:
 	var action := Button.new()
 	action.custom_minimum_size = Vector2(112, 44)
 	action.text = "Craft" if creating else "Upgrade"
-	if creating and GlobalManager.playerLevel < equipment.requiredPlayerLevel:
-		action.text = "Requires level %d" % equipment.requiredPlayerLevel
+	if creating and GlobalManager.playerLevel < equipment.weaponRank:
+		action.text = "Requires level %d" % equipment.weaponRank
 		action.disabled = true
 	elif not GlobalManager.hasMaterials(equipment):
 		action.text = "Not enough materials"

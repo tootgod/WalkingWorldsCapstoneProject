@@ -18,7 +18,7 @@ const BAR_RECRUITS = {
 }
 
 var barLevel := 1
-var hiredRecruits: Array[StringName] = []
+var hiredRecruits: Array[StringName] = []#limit of 10
 var activeCompanions: Array[StringName] = []
 var equipmentInventoryArray: Array[Equipment] = []
 # Starter supplies until walking and dungeon rewards populate the inventory.
@@ -30,7 +30,10 @@ var materialInventoryDictonary: Dictionary[MaterialItem, int] = {
 var charGen:CharacterResourceGenerator = CharacterResourceGenerator.new()
 var stepCount: int=0
 
-var playerCharacter1:CharacterResource = charGen.generateRandomCharacter()
+#This represent the players in the party
+#Null means no character in that slot
+var playerCharacter1:CharacterResource = charGen.generateRandomCharacter()#Unchanging player 1
+#These are the hired characters
 var playerCharacter2:CharacterResource = charGen.generateRandomCharacter()
 var playerCharacter3:CharacterResource = charGen.generateRandomCharacter()
 
@@ -73,7 +76,7 @@ func spendMaterials(equipment: Equipment) -> void:
 
 
 func craftEquipment(recipe: Equipment) -> bool:
-	if not CRAFTABLE_EQUIPMENT.has(recipe) or playerLevel < recipe.requiredPlayerLevel or not hasMaterials(recipe):
+	if not CRAFTABLE_EQUIPMENT.has(recipe) or playerLevel < recipe.weaponRank or not hasMaterials(recipe):
 		return false
 	var item: Equipment = recipe.duplicate()
 	item.equipmentLevel = 1
