@@ -21,7 +21,8 @@ signal downed(battleChar:BattleCharacter )
 			currentLevel = characterResource.currentLevel
 			var modelPath = characterResource.characterModel
 			
-			modelScene = load(modelPath)
+			if is_inside_tree():
+				modelScene = load(modelPath)
 			
 			
 			currentHealth = characterResource.currentHealth
@@ -175,3 +176,4 @@ func removeMana(move:Move):
 	currentMana -= move.manaCost
 	GlobalManager.momentum += move.momentumGeneration
 	GlobalManager.momentum -= move.momentumCost
+	

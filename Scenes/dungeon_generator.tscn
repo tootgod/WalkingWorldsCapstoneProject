@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bgg585od5hdgn" path="res://Scenes/player_controlled_character.tscn" id="7_84eyi"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qvrrf"]
+cell_size = 0.5
 
 [node name="DungeonGenerator" type="Node3D" unique_id=2042142279]
 script = ExtResource("1_2jtma")

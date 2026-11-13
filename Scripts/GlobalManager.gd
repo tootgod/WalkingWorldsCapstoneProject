@@ -39,6 +39,8 @@ var playerCharacter3:CharacterResource = charGen.generateRandomCharacter()
 
 var oldCamera:Camera3D
 var currentBattle:Node3D
+var dungeonRes:DungeonResource = preload("res://Resources/DefaultDungeon.tres")
+var dungeonKeys:int = 0
 
 signal momentumChanged(newMomentum:int)
 var momentum:int:
@@ -141,7 +143,6 @@ func loadBattle(battleScene:PackedScene):
 		if child is Camera3D:
 			child.current = true
 			break
-	
 	
 func unloadBattle():
 	currentBattle.queue_free.call_deferred()

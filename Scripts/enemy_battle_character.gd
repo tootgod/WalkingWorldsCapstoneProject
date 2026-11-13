@@ -10,6 +10,10 @@ extends BattleCharacter
 
 signal tapped(char:BattleCharacter,event:InputEvent)
 
+func _ready() -> void:
+	super()
+	currentLevel = GlobalManager.dungeonRes.dungeonLevel
+
 func _on_attack_timer_timeout_enemy() -> void:
 	if !dead:
 		$AttackDelay.start()
@@ -21,6 +25,7 @@ func _on_attack_delay_timeout() -> void:
 		$AttackTimer.start()
 		$"ModelPivot/character-skeleton2/AnimationPlayer".play("attack-melee-left")
 	
+
 
 func waitForAttackProcess():
 	if !dead:

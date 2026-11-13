@@ -7,6 +7,7 @@ var goldenPathPieces:Array[DungeonPiece]= []
 signal generationFailed(currentDungeon:DungeonGenerator)
 signal generationCompleted(currentDungeon:DungeonGenerator)
 var failureSent:= false
+
 func _ready() -> void:
 	var pathPiece:DungeonPiece = $DungeonCenter
 	goldenPathPieces.push_back(pathPiece)

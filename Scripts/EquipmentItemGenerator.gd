@@ -81,7 +81,8 @@ func _genWand(newEquipment:Equipment) -> Equipment:
 	newEquipment.bonusLuck = rng.randi_range(2,10)
 	
 	var spriteArray:Array = [preload("res://Assets/TempAssets/ItemAssets/StaffCurled.png"),
-	preload("res://Assets/TempAssets/ItemAssets/StaffHoly.png"),preload("res://Assets/TempAssets/ItemAssets/StaffNature.png")]
+	preload("res://Assets/TempAssets/ItemAssets/StaffHoly.png"),
+	preload("res://Assets/TempAssets/ItemAssets/StaffNature.png")]
 	newEquipment.sprite = spriteArray.pick_random()
 	var cost1:MaterialCost = MaterialCost.new()
 	cost1.material = preload("res://Resources/MaterialItems/Wood.tres")
@@ -108,7 +109,8 @@ func _genBow(newEquipment:Equipment) -> Equipment:
 	newEquipment.bonusSpeed = rng.randi_range(5,50)
 	newEquipment.bonusLuck = rng.randi_range(5,25)
 	
-	var spriteArray:Array = [preload("res://Assets/TempAssets/ItemAssets/Crossbow.png"),preload("res://Assets/TempAssets/ItemAssets/CrossbowBlue.png")]
+	var spriteArray:Array = [preload("res://Assets/TempAssets/ItemAssets/Crossbow.png"),
+	preload("res://Assets/TempAssets/ItemAssets/CrossbowBlue.png")]
 	newEquipment.sprite = spriteArray.pick_random()
 	var cost1:MaterialCost = MaterialCost.new()
 	cost1.material = preload("res://Resources/MaterialItems/Vines.tres")
@@ -148,7 +150,9 @@ func _genMetal(newEquipment:Equipment):
 	newEquipment.bonusSpeed = rng.randi_range(-10,20)
 	newEquipment.bonusLuck = rng.randi_range(2,10)
 	
-	var spriteArray:Array = [preload("res://Assets/TempAssets/ItemAssets/ArmorBlue.png"), preload("res://Assets/TempAssets/ItemAssets/ArmorGreen.png"), preload("res://Assets/TempAssets/ItemAssets/ArmorHeavy.png"), preload("res://Assets/TempAssets/ItemAssets/ArmorIron.png")]
+	var spriteArray:Array = [preload("res://Assets/TempAssets/ItemAssets/ArmorBlue.png"), 
+	preload("res://Assets/TempAssets/ItemAssets/ArmorGreen.png"), preload("res://Assets/TempAssets/ItemAssets/ArmorHeavy.png"), 
+	preload("res://Assets/TempAssets/ItemAssets/ArmorIron.png")]
 	newEquipment.sprite = spriteArray.pick_random()
 	var cost1:MaterialCost = MaterialCost.new()
 	cost1.material = preload("res://Resources/MaterialItems/Iron.tres")
@@ -176,8 +180,10 @@ func _genMagic(newEquipment:Equipment):
 	newEquipment.bonusSpeed = rng.randi_range(-10,20)
 	newEquipment.bonusLuck = rng.randi_range(2,10)
 	
-	var spriteArray:Array = ["res://Assets/TempAssets/ItemAssets/CloakBlue.png", "res://Assets/TempAssets/ItemAssets/CloakGreen.png", "res://Assets/TempAssets/ItemAssets/CloakRed.png", "res://Assets/TempAssets/ItemAssets/CloakWing.png",
-	preload("res://Assets/TempAssets/ItemAssets/RobeBlue.png"), preload("res://Assets/TempAssets/ItemAssets/RobeRed.png"), preload("res://Assets/TempAssets/ItemAssets/RobesGreen.png")]
+	var spriteArray:Array = [preload("res://Assets/TempAssets/ItemAssets/CloakBlue.png"), 
+	preload("res://Assets/TempAssets/ItemAssets/CloakGreen.png"), preload("res://Assets/TempAssets/ItemAssets/CloakRed.png"), 
+	preload("res://Assets/TempAssets/ItemAssets/CloakWing.png"),preload("res://Assets/TempAssets/ItemAssets/RobeBlue.png"), 
+	preload("res://Assets/TempAssets/ItemAssets/RobeRed.png"), preload("res://Assets/TempAssets/ItemAssets/RobesGreen.png")]
 	newEquipment.sprite = spriteArray.pick_random()
 	var cost1:MaterialCost = MaterialCost.new()
 	cost1.material = preload("res://Resources/MaterialItems/Vines.tres")
@@ -207,7 +213,7 @@ func _genAccessory(newEquipment:Equipment) -> Equipment:
 	
 	var spriteArray:Array = [preload("res://Assets/TempAssets/ItemAssets/Beads.png"), preload("res://Assets/TempAssets/ItemAssets/Book.png"),
 	preload("res://Assets/TempAssets/ItemAssets/GemBlue.png"), preload("res://Assets/TempAssets/ItemAssets/GemRed.png"),
-	preload("res://Assets/TempAssets/ItemAssets/Orb.png"),"res://Assets/TempAssets/ItemAssets/RibbonBlue.png",
+	preload("res://Assets/TempAssets/ItemAssets/Orb.png"),preload("res://Assets/TempAssets/ItemAssets/RibbonBlue.png"),
 	preload("res://Assets/TempAssets/ItemAssets/RibbonGreen.png"), preload("res://Assets/TempAssets/ItemAssets/RibbonOrange.png"),
 	preload("res://Assets/TempAssets/ItemAssets/RibbonPink.png"), preload("res://Assets/TempAssets/ItemAssets/RibbonWhite.png"), preload("res://Assets/TempAssets/ItemAssets/RibbonYellow.png"),
 	preload("res://Assets/TempAssets/ItemAssets/RingBlue.png"), preload("res://Assets/TempAssets/ItemAssets/RingSmall.png"), preload("res://Assets/TempAssets/ItemAssets/RingSmallBlue.png"),
