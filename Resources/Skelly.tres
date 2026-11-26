@@ -7,23 +7,28 @@
 [ext_resource type="Script" uid="uid://7yyldjrg5ovs" path="res://Scripts/Resources/Character.gd" id="3_x7b12"]
 [ext_resource type="Resource" uid="uid://dm5042is4j3r6" path="res://Resources/Moves/BasicAttack.tres" id="5_pbh47"]
 
-[sub_resource type="Resource" id="Resource_u3xcg"]
+[sub_resource type="Resource" id="Resource_a1t26"]
 script = ExtResource("3_wnyxq")
-className = "skelly"
+className = "skellyBoss"
 classType = 1
 defenseGrowth = 20.0
 healthGrowth = 20.0
 manaGrowth = 5.0
 willpowerGrowth = 20.0
-strengthGrowth = 30.0
-intelligenceGrowth = 10.0
+strengthGrowth = 60.0
+intelligenceGrowth = 20.0
 speedGrowth = 20.0
-luckGrowth = 5.0
+luckGrowth = 10.0
 metadata/_custom_type_script = "uid://byw70jil3xeno"
 
 [resource]
 script = ExtResource("3_x7b12")
 displayName = "Skelly"
-battleClass = SubResource("Resource_u3xcg")
+battleClass = SubResource("Resource_a1t26")
 moveList = Array[ExtResource("2_8ecx8")]([ExtResource("5_pbh47")])
+maxHealth = 40
+strength = 20
+intelligence = 20
+speed = 20
+luck = 15
 metadata/_custom_type_script = "uid://7yyldjrg5ovs"

@@ -52,10 +52,17 @@ func _ready() -> void:
 			child.connectAllonTouch(_on_touch_detector_component_area_touched)
 			child.getAllNavChildrenToChildOf($NavigationRegion3D)
 			child.deleteAllMarkerDeleters()
+			
 	await get_tree().create_timer(0.5).timeout
 	generationCompleted.emit(self)
-	$NavigationRegion3D.bake_navigation_mesh()
+	$PlayerControlledCharacter.position.y -= 3
+	
 	$ColorRect.queue_free()
+
+func generateNavMesh():
+	$NavigationRegion3D.bake_navigation_mesh()
+	await $NavigationRegion3D.bake_finished
+	
 
 func _on_touch_detector_component_area_touched(event_position: Vector3) -> void:
 	$PlayerControlledCharacter.set_movement_target(event_position)

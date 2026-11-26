@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bghq45x8xs3td" path="res://Assets/TempAssets/KenneyAssets/kenney_modular-dungeon-kit_1.0/Models/GLB format/room-large.glb" id="3_kv2by"]
 [ext_resource type="Material" uid="uid://behjhx7w0eiu4" path="res://Assets/InvisibleMat.tres" id="4_kv2by"]
 [ext_resource type="PackedScene" uid="uid://dpy8hr3lvx683" path="res://Assets/TempAssets/KenneyAssets/kenney_modular-dungeon-kit_1.0/Models/GLB format/template-wall.glb" id="4_uu5ad"]
+[ext_resource type="PackedScene" uid="uid://me84xwa0nteb" path="res://Assets/TempAssets/KenneyAssets/kenney_graveyard-kit_5.0/Models/GLB format/character-skeleton.glb" id="5_uu5ad"]
+[ext_resource type="PackedScene" uid="uid://dneqsfocrj4yr" path="res://Assets/TempAssets/KenneyAssets/kenney_prototype-kit/Models/GLB format/flag.glb" id="6_qpbor"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6tj13"]
 data = PackedVector3Array(-9.9, 0.5, 9.45, 9.9, 0.5, 9.45, -9.9, -0.5, 9.45, 9.9, 0.5, 9.45, 9.9, -0.5, 9.45, -9.9, -0.5, 9.45, 9.9, 0.5, -9.45, -9.9, 0.5, -9.45, 9.9, -0.5, -9.45, -9.9, 0.5, -9.45, -9.9, -0.5, -9.45, 9.9, -0.5, -9.45, 9.9, 0.5, 9.45, 9.9, 0.5, -9.45, 9.9, -0.5, 9.45, 9.9, 0.5, -9.45, 9.9, -0.5, -9.45, 9.9, -0.5, 9.45, -9.9, 0.5, -9.45, -9.9, 0.5, 9.45, -9.9, -0.5, -9.45, -9.9, 0.5, 9.45, -9.9, -0.5, 9.45, -9.9, -0.5, -9.45, 9.9, 0.5, 9.45, -9.9, 0.5, 9.45, 9.9, 0.5, -9.45, -9.9, 0.5, 9.45, -9.9, 0.5, -9.45, 9.9, 0.5, -9.45, -9.9, -0.5, 9.45, 9.9, -0.5, 9.45, -9.9, -0.5, -9.45, 9.9, -0.5, 9.45, 9.9, -0.5, -9.45, -9.9, -0.5, -9.45)
@@ -34,7 +36,16 @@ size = Vector3(19.800001, 1, 18.9)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_otb1s"]
 data = PackedVector3Array(-9.9, 0.5, 9.45, 9.9, 0.5, 9.45, -9.9, -0.5, 9.45, 9.9, 0.5, 9.45, 9.9, -0.5, 9.45, -9.9, -0.5, 9.45, 9.9, 0.5, -9.45, -9.9, 0.5, -9.45, 9.9, -0.5, -9.45, -9.9, 0.5, -9.45, -9.9, -0.5, -9.45, 9.9, -0.5, -9.45, 9.9, 0.5, 9.45, 9.9, 0.5, -9.45, 9.9, -0.5, 9.45, 9.9, 0.5, -9.45, 9.9, -0.5, -9.45, 9.9, -0.5, 9.45, -9.9, 0.5, -9.45, -9.9, 0.5, 9.45, -9.9, -0.5, -9.45, -9.9, 0.5, 9.45, -9.9, -0.5, 9.45, -9.9, -0.5, -9.45, 9.9, 0.5, 9.45, -9.9, 0.5, 9.45, 9.9, 0.5, -9.45, -9.9, 0.5, 9.45, -9.9, 0.5, -9.45, 9.9, 0.5, -9.45, -9.9, -0.5, 9.45, 9.9, -0.5, 9.45, -9.9, -0.5, -9.45, 9.9, -0.5, 9.45, 9.9, -0.5, -9.45, -9.9, -0.5, -9.45)
 
-[node name="DungeonBossRoom" unique_id=160938378 instance=ExtResource("1_ppoe7")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_qpbor"]
+size = Vector3(0.84887695, 0.7337036, 0.5756836)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qvrrf"]
+size = Vector3(0.2, 1, 0.6)
+
+[node name="DungeonBossRoom" unique_id=160938378 node_paths=PackedStringArray("chanceEnemy") instance=ExtResource("1_ppoe7")]
+piecesList = null
+chanceEnemy = NodePath("BossSpawner")
+chanceEnemyChance = 1
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="TouchBody" parent_id_path=PackedInt32Array(1932106666) index="0" unique_id=621671458]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9000006, -0.5, 0.14999962)
@@ -86,3 +97,27 @@ mesh = SubResource("BoxMesh_uu5ad")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D" index="5" unique_id=820750198]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9000006, -0.5, 0.14999962)
 shape = SubResource("ConcavePolygonShape3D_otb1s")
+
+[node name="BossSpawner" type="Area3D" parent="." index="4" unique_id=1521493792]
+transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, 4.9309044, 0.80503106, 0.613842)
+
+[node name="character-skeleton2" parent="BossSpawner" index="0" unique_id=452661447 instance=ExtResource("5_uu5ad")]
+transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, 0, -0.1562007, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BossSpawner" index="1" unique_id=1774907270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01159668, 0.43184137, 0)
+shape = SubResource("BoxShape3D_qpbor")
+
+[node name="Exit" type="Area3D" parent="." index="5" unique_id=1079055817]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11, 0, 0)
+visible = false
+
+[node name="flag2" parent="Exit" index="0" unique_id=1103692602 instance=ExtResource("6_qpbor")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exit" index="1" unique_id=1514116409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.20000005)
+shape = SubResource("BoxShape3D_qvrrf")
+disabled = true
+
+[connection signal="body_entered" from="BossSpawner" to="." method="_boss_spawn_body_enter"]
+[connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]

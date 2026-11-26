@@ -10,8 +10,10 @@
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_qvrrf"]
 cell_size = 0.5
+border_size = 2.45
 
 [node name="DungeonGenerator" type="Node3D" unique_id=2042142279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.7683716e-07, 0)
 script = ExtResource("1_2jtma")
 goldenPathArray = Array[PackedScene]([ExtResource("2_vxnsm"), ExtResource("2_vxnsm"), ExtResource("3_u45cc"), ExtResource("3_u45cc"), ExtResource("3_u45cc"), ExtResource("4_lorkv"), ExtResource("4_lorkv"), ExtResource("4_lorkv"), ExtResource("4_lorkv"), ExtResource("3_u45cc"), ExtResource("3_u45cc"), ExtResource("4_lorkv"), ExtResource("5_8gyfi"), ExtResource("5_8gyfi"), ExtResource("5_8gyfi"), ExtResource("5_8gyfi"), ExtResource("5_8gyfi"), ExtResource("5_8gyfi")])
 
@@ -21,7 +23,7 @@ goldenPathArray = Array[PackedScene]([ExtResource("2_vxnsm"), ExtResource("2_vxn
 transform = Transform3D(-1, -8.742278e-08, 0, -3.821371e-15, 4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, 54.556778, 0)
 
 [node name="PlayerControlledCharacter" parent="." unique_id=1030696041 instance=ExtResource("7_84eyi")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 3.9139519, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 4.174395, 0)
 
 [node name="Camera3D" type="Camera3D" parent="PlayerControlledCharacter" unique_id=276951515]
 transform = Transform3D(0.23570228, -0.18980543, 0.13974786, 0, 0.19763331, 0.2684254, -0.23570228, -0.18980543, 0.13974786, 2.8103175, 5.885021, 3.1375473)
@@ -31,6 +33,7 @@ size = 46.495827
 navigation_mesh = SubResource("NavigationMesh_qvrrf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=130318464]
+visible = false
 offset_left = -88.0
 offset_top = -76.0
 offset_right = 377.0
