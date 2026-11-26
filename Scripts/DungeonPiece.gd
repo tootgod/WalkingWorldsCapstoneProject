@@ -4,10 +4,15 @@ extends Node3D
 ##Non Dungeon Pieces can be put in but are not expicity supported
 @export var piecesList:Array[PackedScene]
 @export var chanceEnemy:Area3D = null
+##Chance in 1/chanceEnemyChance to spawn the enemy[br]
+##Set to 1 for 100%,1/2 for 50%, ect
+@export var chanceEnemyChance:int = 2
 var pointsArray:Array[DungeonMarker]
 @onready var marker_deleter: Area3D = $MarkerDeleter
 @onready var side_path: Node3D = $SidePath
-const BATTLE_SCENE = preload("uid://bpaixwb52t8da")
+const BATTLE_SCENE = preload("res://Scenes/BattleScene.tscn")
+const MainTown = preload("res://Scenes/main_town.tscn")
+
 var sidePathFailed:bool = false
 var currentPath:Array[DungeonPiece]=[]
 
@@ -17,9 +22,9 @@ signal overlapError
 signal sidePathDone
 
 func _ready() -> void:
-	if chanceEnemy != null and rng.randi_range(0,1) == 1:
+	if chanceEnemy != null and rng.randi_range(0,chanceEnemyChance-1) != 0:
 		chanceEnemy.queue_free.call_deferred()
-	if chanceEnemy != null:
+	if chanceEnemy != null and chanceEnemy.name != "BossSpawner":
 		chanceEnemy.body_entered.connect(_body_enter)
 		
 	for child in get_children():
@@ -192,3 +197,14 @@ func _body_enter(body:Node3D):
 		GlobalManager.loadBattle(BATTLE_SCENE)
 		#get_tree().change_scene_to_file.call_deferred("res://Scenes/BattleScene.tscn")
 		
+func _boss_spawn_body_enter(body:Node3D):
+	if body.name == "PlayerControlledCharacter":
+		chanceEnemy.queue_free.call_deferred()
+		GlobalManager.loadBattle(preload("res://Scenes/BossBattleScene.tscn"))
+		$Exit.visible = true
+		$Exit/CollisionShape3D.disabled = false
+		#get_tree().change_scene_to_file.call_deferred("res://Scenes/BattleScene.tscn")
+
+
+func _on_exit_body_entered(body: Node3D) -> void:
+	get_tree().change_scene_to_packed.call_deferred(MainTown)

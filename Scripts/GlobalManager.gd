@@ -16,7 +16,6 @@ const BAR_RECRUITS = {
 	&"novice_wizard": {"name": "Novice Wizard", "rank": 1, "passive": MAGIC_MASTER, "material": WOOD, "cost": 2},
 	&"mage": {"name": "Mage", "rank": 2, "passive": MAGIC_MASTER, "material": IRON_WOOD, "cost": 2},
 }
-
 var barLevel := 1
 var hiredRecruits: Array[StringName] = []#limit of 10
 var activeCompanions: Array[StringName] = []

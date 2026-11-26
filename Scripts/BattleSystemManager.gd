@@ -49,9 +49,12 @@ func _ready() -> void:
 	else:
 		$Player_battle_Character3.queue_free()
 		
-	enemyArray.append($Enemy_battle_character)
-	enemyArray.append($Enemy_battle_character2)
-	enemyArray.append($Enemy_battle_character3)
+	if is_instance_valid($Enemy_battle_character):
+		enemyArray.append($Enemy_battle_character)
+	if is_instance_valid($Enemy_battle_character2):
+		enemyArray.append($Enemy_battle_character2)
+	if is_instance_valid($Enemy_battle_character3):
+		enemyArray.append($Enemy_battle_character3)
 
 
 func _on_enemy_battle_character_send_attack(moveToUse: Move, user: BattleCharacter) -> void:
@@ -125,6 +128,7 @@ func _on_move_send_attack(move:Move):
 		endBattleWin()
 
 func endBattleWin():
+	var i:int = 1
 	for ene in enemyArray:
 		var reward = ene.getXpRewards()
 		if GlobalManager.playerCharacter1 != null:
@@ -139,7 +143,12 @@ func endBattleWin():
 			GlobalManager.playerCharacter3.currentExperience += reward
 			GlobalManager.playerCharacter3.currentHealth = $Player_battle_Character3.currentHealth
 			GlobalManager.playerCharacter3.currentMana = $Player_battle_Character3.currentMana
-		GlobalManager.addMaterialItemToInventory(materialItemGenerator.getRandomMaterial())
+		var mat: = materialItemGenerator.getRandomMaterial()
+		var textNode:Label= get_node("CanvasLayer/Text Panel/RewardText%d" % i)
+		textNode.text = "You got a " + mat.itemName + "!"
+		i+=1
+		GlobalManager.addMaterialItemToInventory(mat)
+	$"CanvasLayer/Text Panel".visible = true
 	await get_tree().create_timer(5.0).timeout
 	GlobalManager.unloadBattle()
 

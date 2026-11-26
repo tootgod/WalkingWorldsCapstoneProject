@@ -3,7 +3,7 @@ var dungeonArray:Array[DungeonGenerator]
 var finalDungeon:DungeonGenerator
 const DUNGEON_GENERATOR = preload("res://Scenes/dungeon_generator.tscn")
 var dungeonChosen:bool = false
-
+ 
 
 func _ready() -> void:
 	for num in range(0,8):
@@ -41,6 +41,7 @@ func finalizeDungeon(dungeon:DungeonGenerator):
 	if dungeonChosen == false:
 		dungeonChosen = true
 		finalDungeon = dungeon
+		dungeon.generateNavMesh()
 		#finalDungeon.position.y = 0
 		for child in dungeonArray:
 			if child != null and !(child.name == finalDungeon.name):
